@@ -1,6 +1,7 @@
-# CPS demo nodejs app
+# UCP demo
 
-This application demonstrates a simple, reusable Node.js web application based on the Express framework for Decision Optimization services.
+This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBMDecisionOptimization/do-ws-js) library.
+
 
 ## Run the app locally
 
@@ -8,6 +9,6 @@ This application demonstrates a simple, reusable Node.js web application based o
 1. cd into this project's root directory
 1. Run `npm install` to install the app's dependencies
 1. Run `npm start` to start the app
-1. Access the running app in a browser at <http://localhost:6001>
+1. Access the running app in a browser at <http://localhost:6003>
 
 [Install Node.js]: https://nodejs.org/en/download/

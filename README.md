@@ -12,3 +12,5 @@ This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBM
 1. Access the running app in a browser at <http://localhost:6003>
 
 [Install Node.js]: https://nodejs.org/en/download/
+
+![Screnshot](/images/ucp.png)

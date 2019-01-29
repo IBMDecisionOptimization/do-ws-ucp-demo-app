@@ -1,0 +1,30 @@
+{
+	"units": {
+		"category": "input"
+	},
+	"loads": {
+		"category": "input"
+	},
+	"UnitMaintenances": {
+		"category": "input"
+	},
+	"periods": {
+		"category": "input"
+	},
+	
+	
+	
+	"kpis": {
+		"category": "output"
+	},
+	"production": {
+		"category": "output"
+	},
+	"started": {
+		"category": "output"
+	},
+	"used": {
+		"category": "output"
+	}
+
+}

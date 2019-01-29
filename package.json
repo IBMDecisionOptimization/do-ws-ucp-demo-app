@@ -1,0 +1,25 @@
+{
+  "name": "dd-ambulances-demo-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "copyfiles -f node_modules/do-ws-js/public/*.js public/do-ws-js && copyfiles -f node_modules/do-ws-js/public/stylesheets/*.css public/do-ws-js/stylesheets",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "x",
+    "cfenv": "1.0.x",
+    "express": "4.15.x",
+    "multer": "x",
+    "request": "2.83.x",
+    "do-ws-js": "0.1.x"
+  },
+  "repository": {},
+  "engines": {
+    "node": "6.x"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.0"
+  }
+}

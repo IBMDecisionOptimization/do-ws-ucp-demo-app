@@ -5,10 +5,15 @@ intervalId = ''
 
 scenariomgr = undefined;
 
+// The scenario configuration :
+// - sets which tables must be used by the application (can be a subset of really existing tables)
+// - allows to define an id
+// - allows to set some table as editable
+
 scenariocfg = {        
         'units' : { id:"Units", title:"Units", allowEdition:true},        
         'loads' : {  id:"Periods", title:"Load", allowEdition:true},
-        'UnitMaintenances' : {title:"Maintenances", allowEdition:true},
+        'UnitMaintenances' : {id:null, title:"Maintenances", allowEdition:true, maxSize:10*24*7},
         'periods' : { id:"Id", title:"Periods"},
 
         'production' : { title:"Production"},
@@ -164,19 +169,19 @@ function showSolution(scenario) {
 
         colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300", "#8b0707", "#651067", "#329262", "#5574a6", "#3b3eac"];
   
-        rows = scenario.tables['production'].rows;
+        production = scenario.tables['production'].rows;
         values = {}
 
         periods = []
-        for (o in rows) {
-                p = rows[o].Periods;
+        for (o in production) {
+                p = production[o].Periods;
                 x = periods.indexOf(p);
                 if (x == -1) {
                         periods.push(p);
                         x = periods.indexOf(p);
                 }
-                y = parseFloat(rows[o].value);
-                unit = rows[o].Units;                
+                y = parseFloat(production[o].value);
+                unit = production[o].Units;                
                 if (!(unit in values))
                         values[unit] = [];
                 values[unit].push({x:x, y:y});
@@ -196,6 +201,43 @@ function showSolution(scenario) {
         }
 
         nvd3chart('chart', data)
+
+        assignments = {};
+        assignments_data = [];
+        assignments_qty = [];        
+        now = new Date('01/14/2019').getTime()
+        for (o in production) {
+                p = production[o].Periods;
+                x = periods.indexOf(p);
+                y = parseFloat(production[o].value);
+                unit = production[o].Units;                
+                if (y > 0) {
+                        if (assignments_qty[unit] == undefined)
+                                assignments_qty[unit] = []                        
+                        taskid = unit + '-' + p;
+                        assignments_qty[unit][taskid] = 1;
+                        activity = { 
+                                "id": taskid,
+                                "name": taskid,
+                                "start": (now + 60*60*1000*x),
+                                "end": (now + 60*60*1000*(x+1))
+                        };
+                        if (assignments[unit] == undefined) {                                
+                                assignments[unit] = {
+                                        "id" : unit,
+                                        "name" : unit,
+                                        "activities" : [ ],
+                                        "parent" : ""
+                
+                                }
+                        }
+                        assignments[unit].activities.push(activity);
+                }
+        }
+        for (o in assignments)
+                assignments_data.push(assignments[o]);
+
+        showGantt('gantt_div', assignments_data, assignments_qty, config = {})        
 }
 
 function showKpis(scenario) {

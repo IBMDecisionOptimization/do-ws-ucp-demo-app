@@ -7,6 +7,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "@do/dd-gantt-component": "x",
     "axios": "^0.17.1",
     "body-parser": "x",
     "cfenv": "1.0.x",

@@ -85,3 +85,15 @@ showAsGoogleTables(scenario, 'inputs_div', 'input',
                 ['units', 'loads', 'UnitMaintenances'],
                  scenariocfg)
 ```
+
+### app.js
+
+The app.js file is the usual node js entry point.
+
+The only important thing to do here is to use the right OPTIM_URL and OPTIM_KEY that are used to initialize the DO backend APIs.
+
+The values in the goithub repository are not valid. You should replace by the corresponding URL/TOKEn from your deployed model.
+
+
+
+

@@ -6,7 +6,7 @@ intervalId = ''
 scenariomgr = undefined;
 
 scenariocfg = {        
-        'units' : { id:"Units", title:"units", allowEdition:true},        
+        'units' : { id:"Units", title:"Units", allowEdition:true},        
         'loads' : {  id:"Periods", title:"Load", allowEdition:true},
         'UnitMaintenances' : {title:"Maintenances", allowEdition:true},
         'periods' : { id:"Id", title:"Periods"},
@@ -71,7 +71,7 @@ function showInputsAndOutputs(scenario) {
         if (scenario == undefined)
                 return;
         showAsGoogleTables(scenario, 'inputs_div', 'input',
-                undefined,
+                ['units', 'loads', 'UnitMaintenances'],
                  scenariocfg)
         
         showSolution(scenario);
@@ -159,7 +159,8 @@ function cleanSolve() {
 
 
 function showSolution(scenario) {
-        showAsGoogleTables(scenario, 'outputs_div', 'output', undefined, scenariocfg)        
+        showAsGoogleTables(scenario, 'outputs_div', 'output', 
+                ['production', 'started', 'used', 'kpis'], scenariocfg)        
 
         colors = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300", "#8b0707", "#651067", "#329262", "#5574a6", "#3b3eac"];
   
@@ -194,35 +195,7 @@ function showSolution(scenario) {
                 data.push(d)
         }
 
-
-        nv.addGraph(function() {
-                var chart = nv.models.stackedAreaChart()
-                        .margin({right: 100})
-                       // .x(function(d) { return d[0] })   //We can modify the data accessor functions...
-                       // .y(function(d) { return d[1] })   //...in case your data is formatted differently.
-                        .useInteractiveGuideline(true)    //Tooltips which show all data points. Very nice!
-                        .rightAlignYAxis(true)      //Let's move the y-axis to the right side.
-                        //.transitionDuration(500)
-                        .showControls(true)       //Allow user to choose 'Stacked', 'Stream', 'Expanded' mode.
-                        .clipEdge(true);
-        
-                //Format x-axis labels with custom function.
-                // chart.xAxis
-                // .tickFormat(function(d) { 
-                // return d3.time.format('%x')(new Date(d)) 
-                // });
-        
-                chart.yAxis
-                .tickFormat(d3.format(',.2f'));
-        
-                d3.select('#chart svg')
-                .datum(data)
-                .call(chart);
-        
-                nv.utils.windowResize(chart.update);
-        
-                return chart;
-        });
+        nvd3chart('chart', data)
 }
 
 function showKpis(scenario) {

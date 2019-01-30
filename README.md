@@ -17,9 +17,9 @@ dic
 
 ## How it works
 
-### Dependenciesto
+### Dependencies
 
-The nodejs package.json file indicate depencenies on the do-ws-js package, along with some post install step to copy the js files into the public subdirectory.
+The nodejs package.json file lists dependencies on the do-ws-js package, along with some post install step to copy the js files into the public subdirectory.
 
 ```
  "scripts": {

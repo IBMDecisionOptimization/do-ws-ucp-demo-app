@@ -3,8 +3,8 @@ applications:
   memory: 256M
   instances: 1
   domain: eu-gb.mybluemix.net
-  name: predictivemaintenancedemo
-  host: predictivemaintenancedemo
+  name: ws-do-ucp-demo-app
+  host: ws-do-ucp-demo-app
   disk_quota: 1024M
   services:
   - availability-monitoring-auto

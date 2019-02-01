@@ -206,6 +206,29 @@ function showSolution(scenario) {
         assignments_data = [];
         assignments_qty = [];        
         now = new Date('01/14/2019').getTime()
+
+        for (u in units) {
+                unit = units[u];
+                if (assignments[unit] == undefined) {      
+                        unit_type = unit.split('_')[0]; 
+                        if (assignments[unit_type] == undefined) {  
+                                assignments[unit_type] = {
+                                        "id" : unit_type,
+                                        "name" : unit_type,
+                                        "activities" : [ ],
+                                        "parent" : ""
+                
+                                }   
+                        }               
+                        assignments[unit] = {
+                                "id" : unit,
+                                "name" : unit,
+                                "activities" : [ ],
+                                "parent" : unit_type
+        
+                        }
+                }
+        }
         for (o in production) {
                 p = production[o].Periods;
                 x = periods.indexOf(p);
@@ -216,28 +239,21 @@ function showSolution(scenario) {
                                 assignments_qty[unit] = []                        
                         taskid = unit + '-' + p;
                         assignments_qty[unit][taskid] = 1;
+                        unit_type = unit.split('_')[0]; 
                         activity = { 
                                 "id": taskid,
                                 "name": taskid,
                                 "start": (now + 60*60*1000*x),
-                                "end": (now + 60*60*1000*(x+1))
-                        };
-                        if (assignments[unit] == undefined) {                                
-                                assignments[unit] = {
-                                        "id" : unit,
-                                        "name" : unit,
-                                        "activities" : [ ],
-                                        "parent" : ""
-                
-                                }
-                        }
+                                "end": (now + 60*60*1000*(x+1)),
+                                "unit-type": unit_type
+                        };                        
                         assignments[unit].activities.push(activity);
                 }
         }
         for (o in assignments)
                 assignments_data.push(assignments[o]);
 
-        showGantt('gantt_div', assignments_data, assignments_qty, config = {})        
+        showGantt('gantt_div', assignments_data, assignments_qty, config = {color:"unit-type", filters:["unit-type"]})        
 }
 
 function showKpis(scenario) {

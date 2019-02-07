@@ -1,14 +1,14 @@
 {
-	"units": {
+	"Units": {
 		"category": "input"
 	},
-	"loads": {
+	"Loads": {
 		"category": "input"
 	},
 	"UnitMaintenances": {
 		"category": "input"
 	},
-	"periods": {
+	"Periods": {
 		"category": "input"
 	},
 	

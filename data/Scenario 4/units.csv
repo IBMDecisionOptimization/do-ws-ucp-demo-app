@@ -1,5 +1,5 @@
 Units,init_prod_level,min_generation,max_generation,operating_max_gen,min_up,min_down,ramp_up,ramp_down,start_up_cost,constant_cost,linear_cost,co2_cost
-COAL_1,300,166.66666666666669,300,250,15,9,212,183,5000,208,22,30
+COAL_1,400,166.66666666666669,500,250,15,9,212,183,5000,208,22,30
 COAL_2,350,233.33333333333334,600,250,15,8,150,198,4550,117,31,30
 GAS_1,205,78,220,205,6,7,101,95,1320,174,70,5
 GAS_2,52,52,210,197,5,4,94,101,1291,172,69,5

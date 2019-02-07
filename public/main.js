@@ -11,10 +11,10 @@ scenariomgr = undefined;
 // - allows to set some table as editable
 
 scenariocfg = {        
-        'units' : { id:"Units", title:"Units", allowEdition:true},        
-        'loads' : {  id:"Periods", title:"Load", allowEdition:true},
+        'Units' : { id:"Units", title:"Units", allowEdition:true},        
+        'Loads' : {  id:"Periods", title:"Load", allowEdition:true},
         'UnitMaintenances' : {id:null, title:"Maintenances", allowEdition:true, maxSize:10*24*7},
-        'periods' : { id:"Id", title:"Periods"},
+        'Periods' : { id:"Id", title:"Periods"},
 
         'production' : { title:"Production"},
         'started' : { title:"Started"},
@@ -45,9 +45,7 @@ function onChangeScenario() {
         console.log("Selected scenario " + scenariomgr.getSelectedScenario().getName());
         let scenario = scenariomgr.getSelectedScenario();
         
-        showInputsAndOutputs(scenario);
-       
-        showSolution(scenario);
+        showInputsAndOutputs(scenario);       
 }
 
 
@@ -60,8 +58,10 @@ function initOptim() {
               })
         .then(function (response) {
                 obj = response.data;
-                solveUrl = obj.deploymentDescription.links[1].uri
-                console.log("Solve URL :" + solveUrl);                        
+                if ('deploymentDescription' in obj) {
+                        solveUrl = obj.deploymentDescription.links[1].uri
+                        console.log("Solve URL :" + solveUrl);
+                }                      
                 enableSolve();
         })
         .catch(showHttpError);     
@@ -76,7 +76,7 @@ function showInputsAndOutputs(scenario) {
         if (scenario == undefined)
                 return;
         showAsGoogleTables(scenario, 'inputs_div', 'input',
-                ['units', 'loads', 'UnitMaintenances'],
+                ['Units', 'Loads', 'UnitMaintenances'],
                  scenariocfg)
         
         showSolution(scenario);
@@ -145,7 +145,10 @@ function checkStatus() {
                         let nout = response.data.outputAttachments.length;
                         for (var i = 0; i < nout; i++) {
                                 let oa = response.data.outputAttachments[i];
-                                scenario.addTableFromRows(oa.name, oa.table.rows, 'output', scenariocfg[oa.name]);   
+                                if ('csv' in oa)
+                                        scenario.addTableFromCSV(oa.name, oa.csv, 'output', scenariocfg[oa.name]);     
+                                else
+                                        scenario.addTableFromRows(oa.name, oa.table.rows, 'output', scenariocfg[oa.name]); 
                         }
 
                         //document.getElementById('gantt_div').style.display="block";
@@ -207,6 +210,13 @@ function showSolution(scenario) {
         assignments_qty = [];        
         now = new Date('01/14/2019').getTime()
 
+        assignments['ALL'] = {
+                "id" : "ALL",
+                "name" : "ALL",
+                "activities" : [ ],
+                "parent" : ""
+
+        }
         for (u in units) {
                 unit = units[u];
                 if (assignments[unit] == undefined) {      
@@ -216,7 +226,7 @@ function showSolution(scenario) {
                                         "id" : unit_type,
                                         "name" : unit_type,
                                         "activities" : [ ],
-                                        "parent" : ""
+                                        "parent" : "ALL"
                 
                                 }   
                         }               

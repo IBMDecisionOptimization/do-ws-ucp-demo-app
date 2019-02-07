@@ -9,12 +9,13 @@
   "dependencies": {
     "@do/dd-gantt-component": "x",
     "axios": "^0.17.1",
+    "sync-request": "x",    
     "body-parser": "x",
     "cfenv": "1.0.x",
     "express": "4.15.x",
     "multer": "x",
     "request": "2.83.x",
-    "do-ws-js": ">=0.1.11"
+    "do-ws-js": ">=0.1.15"
   },
   "repository": {},
   "engines": {

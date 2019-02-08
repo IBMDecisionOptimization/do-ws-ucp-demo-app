@@ -43,7 +43,7 @@ OPTIM_KEY = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsYWl
 //OPTIM_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 //OPTIM_MODEL = 'model.py'
 
-dods.routeSolve(router, OPTIM_URL, OPTIM_KEY, OPTIM_MODEL);
+dods.routeSolve(router, OPTIM_URL, OPTIM_KEY /*, OPTIM_MODEL*/ );
 
 
 // REGISTER OUR ROUTES -------------------------------

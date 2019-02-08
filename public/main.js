@@ -136,7 +136,8 @@ function checkStatus() {
         .then(function(response) {
                 executionStatus = response.data.solveState.executionStatus
                 console.log("JobId: "+jobId +" Status: "+executionStatus)
-                document.getElementById('SOLVE').value = executionStatus;
+                if (executionStatus != "UNKNOWN")
+                        document.getElementById('SOLVE').value = executionStatus;
                                 
                 if (executionStatus == "PROCESSED" ||
                         executionStatus == "INTERRUPTED" ) {

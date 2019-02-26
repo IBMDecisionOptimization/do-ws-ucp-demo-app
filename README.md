@@ -5,15 +5,14 @@ This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBM
 
 ## Run the app locally
 
-1. [Install Node.js][]
+1. [Install Node.js](https://nodejs.org/en/download/)
 1. cd into this project's root directory
 1. Run `npm install` to install the app's dependencies
 1. Run `npm start` to start the app
 1. Access the running app in a browser using either
   * <http://localhost:6004> for the standard version
   * <http://localhost:6004/index-grid.html> for the grid version
-dic
-[Install Node.js]: https://nodejs.org/en/download/
+
 
 ![Screnshot](/images/ucp.png)
 

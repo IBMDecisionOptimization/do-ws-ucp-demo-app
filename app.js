@@ -37,14 +37,27 @@ var dods = require('do-ws-js/dods');
 dods.routeScenario(router);
 
 
-OPTIM_URL = 'https://bcp.datascienceelite.com/dsvc/v1/pa3/domodel/ucp/model/UCPSAVED'
-OPTIM_KEY = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsYWluLmNoYWJyaWVyQGlibS5jb20iLCJwYWNrYWdlTmFtZSI6IlBBMyIsInBhY2thZ2VSb3V0ZSI6InBhMyIsImlhdCI6MTU0NDAwMTQyM30.iCnpLeIt8cSpSK8ysdyrnyM4phsnjcOgex-B1N-ZSzYOH6J9v9DHy3C00XfP1S8NeehK-dVbBrWBbXdIgpDHOE2kG7D88t5Cb4hlHt65dyE5HmQcJQm6HHLQeLy2TWmIRUOlJHZlBCKHS9_V_Ek9ySMx6K5fQkNUziQxyH_bvcN3laoRBBUAVpG4OAz67W2kaPqvla1wu3_XOgFTj-48_CTPpm-i5FUQZ9x1eGgQNygnmBiES9qIp6voe_7V6O3mzni6zPmYjkdfQjUP4Aa8FL_eHWcak8beaSEv39ED5Ifk0F2WvOOAmCu-913kfmV2Kmn1WdCB399bLNTgOFIo3w"
-//OPTIM_URL = 'https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/'
-//OPTIM_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-//OPTIM_MODEL = 'model.py'
+configdo = {
+  //url : 'https://bcp.datascienceelite.com/dsvc/v1/pa3/domodel/ucp/model/UCPSAVED',
+  //key: "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsYWluLmNoYWJyaWVyQGlibS5jb20iLCJwYWNrYWdlTmFtZSI6IlBBMyIsInBhY2thZ2VSb3V0ZSI6InBhMyIsImlhdCI6MTU0NDAwMTQyM30.iCnpLeIt8cSpSK8ysdyrnyM4phsnjcOgex-B1N-ZSzYOH6J9v9DHy3C00XfP1S8NeehK-dVbBrWBbXdIgpDHOE2kG7D88t5Cb4hlHt65dyE5HmQcJQm6HHLQeLy2TWmIRUOlJHZlBCKHS9_V_Ek9ySMx6K5fQkNUziQxyH_bvcN3laoRBBUAVpG4OAz67W2kaPqvla1wu3_XOgFTj-48_CTPpm-i5FUQZ9x1eGgQNygnmBiES9qIp6voe_7V6O3mzni6zPmYjkdfQjUP4Aa8FL_eHWcak8beaSEv39ED5Ifk0F2WvOOAmCu-913kfmV2Kmn1WdCB399bLNTgOFIo3w"
 
-dods.routeSolve(router, OPTIM_URL, OPTIM_KEY /*, OPTIM_MODEL*/ );
+  url:  'https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/',
+  key: 'api_xxxxxxxxxxxxxxxxxxxxxxxxxx',
+  model: 'model.py'
+}
 
+dods.routeSolve(router, configdo);
+
+var dodsxpa = require('do-ws-js/dodsxpa');
+
+configdsx = {
+  "url": "https://bcp.datascienceelite.com",
+  "login": "alain.chabrier@ibm.com",
+  "password": "xxxxxxxxxxxxxxxxxxxxx",
+  "projectName": "PA3"
+},
+
+dodsxpa.routeDSX(router, configdsx);
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api

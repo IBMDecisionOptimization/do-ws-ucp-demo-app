@@ -5,6 +5,7 @@ inputs["Units"] = pd.read_csv("Units.csv")
 inputs["Loads"] = pd.read_csv("Loads.csv")
 inputs["UnitMaintenances"] = pd.read_csv("UnitMaintenances.csv")
 inputs["Periods"] = pd.read_csv("Periods.csv")
+inputs["Weights"] = pd.read_csv("Weights.csv")
 
 from docplex.mp.environment import Environment
 from docplex.mp.model import Model
@@ -20,6 +21,20 @@ df_loads.set_index(df_loads["Periods"], inplace=True)
 df_periods = inputs['Periods']
 df_periods.set_index(df_periods["Id"], inplace=True)
 df_maint = inputs['UnitMaintenances']
+
+
+wtotal_fixed_cost = 1
+wtotal_variable_cost = 1
+wtotal_startup_cost = 1 
+wtotal_co2_cost = 1
+
+if ('Weights' in inputs):
+	df_weights = inputs['Weights']
+	df_weights.set_index(df_weights["Id"], inplace=True)
+	wtotal_fixed_cost = df_weights.value['fixed_cost']
+	wtotal_variable_cost = df_weights.value['variable_cost']
+	wtotal_startup_cost = df_weights.value['startup_cost']
+	wtotal_co2_cost = df_weights.value['co2_cost']
 
 robust = 0
 
@@ -164,14 +179,14 @@ if (n_starts is not None):
 ucpm.add_kpi(total_fixed_cost   , "Total Fixed Cost")
 ucpm.add_kpi(total_variable_cost, "Total Variable Cost")
 ucpm.add_kpi(total_startup_cost , "Total Startup Cost")
-ucpm.add_kpi(total_economic_cost, "Total Economic Cost")
+#ucpm.add_kpi(total_economic_cost, "Total Economic Cost")
 ucpm.add_kpi(total_co2_cost     , "Total CO2 Cost")
-ucpm.add_kpi(total_cost         , "Total Cost")
-ucpm.add_kpi(total_nb_used, "Total #used")
-ucpm.add_kpi(total_nb_starts, "Total #starts")
+#ucpm.add_kpi(total_cost         , "Total Cost")
+#ucpm.add_kpi(total_nb_used, "Total #used")
+#ucpm.add_kpi(total_nb_starts, "Total #starts")
 
 # minimize sum of all costs
-ucpm.minimize(total_fixed_cost + total_variable_cost + total_startup_cost + total_co2_cost)
+ucpm.minimize(wtotal_fixed_cost * total_fixed_cost + wtotal_variable_cost * total_variable_cost + wtotal_startup_cost * total_startup_cost + wtotal_co2_cost * total_co2_cost)
 
 if ucpm.solve(url=url, key=key):
 	print "  Feasible " + str(ucpm.objective_value)
@@ -181,7 +196,7 @@ if ucpm.solve(url=url, key=key):
 	df_started = df_decision_vars.turn_on.apply(lambda v: v.solution_value).unstack(level='Units')
 
 	all_kpis = [(kp.name, kp.compute()) for kp in ucpm.iter_kpis()]
-	all_kpis.append(("Feasibility", 1))
+	#all_kpis.append(("Feasibility", 1))
 	kpis_bd = pd.DataFrame(all_kpis, columns=['kpi', 'value'])
 
 	df_production = df_prods.copy()
@@ -220,5 +235,6 @@ else:
 	kpis_bd = pd.DataFrame(all_kpis, columns=['kpi', 'value'])
 	outputs = {}
 	outputs['kpis'] = kpis_bd
+	
 from docplex.util.environment import get_environment
 get_environment().store_solution(outputs)

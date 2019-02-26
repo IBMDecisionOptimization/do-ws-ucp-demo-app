@@ -23,8 +23,8 @@ value,Units,Periods
 0.0,COAL_2,Mon-02
 0.0,DIESEL_1,Mon-02
 0.0,DIESEL_2,Mon-02
-0.0,DIESEL_3,Mon-02
-0.0,DIESEL_4,Mon-02
+1.0,DIESEL_3,Mon-02
+1.0,DIESEL_4,Mon-02
 0.0,GAS_1,Mon-02
 0.0,GAS_2,Mon-02
 0.0,GAS_3,Mon-02
@@ -289,7 +289,7 @@ value,Units,Periods
 0.0,GAS_2,Tue-04
 0.0,GAS_3,Tue-04
 0.0,GAS_4,Tue-04
-0.0,COAL_1,Tue-05
+1.0,COAL_1,Tue-05
 0.0,COAL_2,Tue-05
 0.0,DIESEL_1,Tue-05
 0.0,DIESEL_2,Tue-05
@@ -789,7 +789,7 @@ value,Units,Periods
 0.0,GAS_2,Thu-06
 0.0,GAS_3,Thu-06
 0.0,GAS_4,Thu-06
-0.0,COAL_1,Thu-07
+1.0,COAL_1,Thu-07
 0.0,COAL_2,Thu-07
 0.0,DIESEL_1,Thu-07
 0.0,DIESEL_2,Thu-07
@@ -1504,7 +1504,7 @@ value,Units,Periods
 0.0,DIESEL_1,Sun-06
 0.0,DIESEL_2,Sun-06
 0.0,DIESEL_3,Sun-06
-0.0,DIESEL_4,Sun-06
+1.0,DIESEL_4,Sun-06
 0.0,GAS_1,Sun-06
 0.0,GAS_2,Sun-06
 0.0,GAS_3,Sun-06
@@ -1533,7 +1533,7 @@ value,Units,Periods
 0.0,COAL_2,Sun-09
 0.0,DIESEL_1,Sun-09
 0.0,DIESEL_2,Sun-09
-0.0,DIESEL_3,Sun-09
+1.0,DIESEL_3,Sun-09
 0.0,DIESEL_4,Sun-09
 0.0,GAS_1,Sun-09
 0.0,GAS_2,Sun-09

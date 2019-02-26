@@ -15,7 +15,8 @@
     "express": "4.15.x",
     "multer": "x",
     "request": "2.83.x",
-    "do-ws-js": ">=0.1.16"
+    "do-ws-js": ">=0.1.34",
+    "gridstack": "*"
   },
   "repository": {},
   "engines": {

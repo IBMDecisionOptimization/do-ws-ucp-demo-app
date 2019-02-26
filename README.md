@@ -9,7 +9,9 @@ This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBM
 1. cd into this project's root directory
 1. Run `npm install` to install the app's dependencies
 1. Run `npm start` to start the app
-1. Access the running app in a browser at <http://localhost:6003>
+1. Access the running app in a browser using either
+  * <http://localhost:6004> for the standard version
+  * <http://localhost:6004/index-grid.html> for the grid version
 dic
 [Install Node.js]: https://nodejs.org/en/download/
 
@@ -37,13 +39,13 @@ The nodejs package.json file lists dependencies on the do-ws-js package, along w
   },
   ```
   
-### HTML code
+### HTML code 
   
-The HTML code is standard. public.html includes all required dependencies, and suggests some layout for the different divs that will be used.
+The HTML code is standard. index.html/index-grid.html includes all required dependencies, and suggests some layout for the different divs that will be used.
   
-The real code is in main.js
+The real code is in main.js/main-grid.js
   
-### main.js
+### main.js / main-grid.js
   
 This is the real code.  Important part is the scenario configuration
   
@@ -90,7 +92,7 @@ showAsGoogleTables(scenario, 'inputs_div', 'input',
 
 The app.js file is the usual node js entry point.
 
-The only important thing to do here is to use the right OPTIM_URL and OPTIM_KEY that are used to initialize the DO backend APIs.
+The only important thing to do here is to use the right configuration for decision optimization that is used to initialize the DO backend APIs.
 
 The values in the goithub repository are not valid. You should replace by the corresponding URL/TOKEn from your deployed model.
 

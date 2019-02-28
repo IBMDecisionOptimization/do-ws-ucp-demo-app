@@ -185,9 +185,9 @@ function ganttcb() {
 function load() {               
 
         var workspace = location.search.split('workspace=')[1]
-        scenariomgr = new ScenarioManager(workspace);        
+        scenariomgr = new ScenarioManager(workspace, scenariocfg);        
 
-        scenariomgr.loadScenarios(scenariocfg);
+        scenariomgr.loadScenarios();
         
         scenariogrid = new ScenarioGrid('UnitCommitment Demo', 'scenario_grid_div', scenariomgr, {enableImport:true});
 
@@ -201,9 +201,9 @@ function load() {
 
         scenariogrid.addTableWidget('kpis', scenariocfg.kpis, 6, 5, 6, 3);
 
-        scenariogrid.addTablesWidget('Inputs', 'input', ['Units', 'Loads', 'UnitMaintenances'], scenariocfg, 0, 8, 6, 4);
+        scenariogrid.addTablesWidget('Inputs', 'input', ['Units', 'Loads', 'UnitMaintenances'], 0, 8, 6, 4);
 
-        scenariogrid.addTablesWidget('Outputs', 'output', ['production', 'started', 'used'], scenariocfg, 6, 8, 6, 4);
+        scenariogrid.addTablesWidget('Outputs', 'output', ['production', 'started', 'used'], 6, 8, 6, 4);
 
 
         let chartcfg = { 

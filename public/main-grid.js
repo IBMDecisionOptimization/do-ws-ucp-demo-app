@@ -23,6 +23,37 @@ scenariocfg = {
         "$scenario" : { cb : showInputsAndOutputs }
 };
 
+function nvd3cbdemand() {
+        let scenario = scenariomgr.getSelectedScenario();
+
+        let load = scenario.tables['Loads'].rows;
+        let values = {load:[]}
+
+        let periods = []
+        for (o in load) {
+                p = load[o].Periods;
+                x = periods.indexOf(p);
+                if (x == -1) {
+                        periods.push(p);
+                        x = periods.indexOf(p);
+                }
+                y = parseFloat(load[o].value);
+                values['load'].push({x:x, y:y});
+        }
+        let data = []
+        let units = []  
+
+        for (u in values) {
+                d = {
+                        values:values[u],
+                        key:u
+                };
+                data.push(d)
+        }
+
+        nvd3chart('demand_chart', data)
+
+}
 
 function nvd3cb() {
         let scenario = scenariomgr.getSelectedScenario();
@@ -185,7 +216,7 @@ function ganttcb() {
 function load() {               
 
         var workspace = location.search.split('workspace=')[1]
-        scenariomgr = new ScenarioManager(workspace, scenariocfg);        
+        scenariomgr = new ScenarioManager(scenariocfg, workspace);        
 
         scenariomgr.loadScenarios();
         
@@ -205,10 +236,21 @@ function load() {
 
         scenariogrid.addTablesWidget('Outputs', 'output', ['production', 'started', 'used'], 6, 8, 6, 4);
 
+        let demandcfg = { 
+                x: 0,
+                y: 12,
+                width: 12,
+                height: 6,
+                title: "Demand chart",
+                innerHTML: '<div id="demand_chart" style="width: 100%; height: calc(100% - 30px);"><svg></svg></div>',
+                cb: nvd3cbdemand
+        }
+
+        scenariogrid.addCustomWidget('demand_chart', demandcfg);
 
         let chartcfg = { 
                 x: 0,
-                y: 12,
+                y: 18,
                 width: 12,
                 height: 6,
                 title: "Production chart",
@@ -221,7 +263,7 @@ function load() {
 
         let vegacfg = { 
                 x: 0,
-                y: 18,
+                y: 24,
                 width: 12,
                 height: 6,
                 title: "Vega lite test",
@@ -233,7 +275,7 @@ function load() {
 
         let ganttcfg = { 
                 x: 0,
-                y: 24,
+                y: 30,
                 width: 12,
                 height: 6,
                 title: "Production Gantt chart",

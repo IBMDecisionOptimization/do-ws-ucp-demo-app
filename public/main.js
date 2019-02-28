@@ -33,8 +33,8 @@ function load() {
         document.getElementById("SOLVE").onclick = solve;
 
 
-        scenariomgr = new ScenarioManager();        
-        scenariomgr.loadScenarios(scenariocfg);
+        scenariomgr = new ScenarioManager(scenariocfg);        
+        scenariomgr.loadScenarios();
         scenariomgr.showAsSelector(`scenario_div`, onChangeScenario);
 
         cleanSolve();

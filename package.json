@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "copyfiles -f node_modules/do-ws-js/public/*.js public/do-ws-js && copyfiles -f node_modules/do-ws-js/public/stylesheets/*.css public/do-ws-js/stylesheets",
+		"postinstall": "copyfiles -f node_modules/do-ws-js/public/*.js public/do-ws-js && copyfiles -f node_modules/do-ws-js/public/stylesheets/*.css public/do-ws-js/stylesheets && copyfiles -f node_modules/do-ws-js/public/images/*.png public/do-ws-js/images",
     "start": "node app.js"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "express": "4.15.x",
     "multer": "x",
     "request": "2.83.x",
-    "do-ws-js": ">=0.1.37",
+    "do-ws-js": ">=0.1.38",
     "gridstack": "*"
   },
   "repository": {},

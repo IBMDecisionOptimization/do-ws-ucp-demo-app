@@ -1,0 +1,36 @@
+[2019-03-01T08:03:21Z, INFO] WARNING: Number of workers has been reduced to 10 to comply with platform limitations.
+[2019-03-01T08:03:21Z, INFO] CPXPARAM_Read_DataCheck                          1
+[2019-03-01T08:03:21Z, INFO] CPXPARAM_Threads                                 10
+[2019-03-01T08:03:21Z, INFO] Tried aggregator 2 times.
+[2019-03-01T08:03:21Z, INFO] MIP Presolve eliminated 69 rows and 72 columns.
+[2019-03-01T08:03:21Z, INFO] Aggregator did 386 substitutions.
+[2019-03-01T08:03:21Z, INFO] Reduced MIP has 133 rows, 316 columns, and 3801 nonzeros.
+[2019-03-01T08:03:21Z, INFO] Reduced MIP has 0 binaries, 316 generals, 0 SOSs, and 0 indicators.
+[2019-03-01T08:03:21Z, INFO] Presolve time = 0.01 sec. (3.97 ticks)
+[2019-03-01T08:03:21Z, INFO] Found incumbent of value 4960.000000 after 0.02 sec. (8.83 ticks)
+[2019-03-01T08:03:21Z, INFO] Tried aggregator 1 time.
+[2019-03-01T08:03:21Z, INFO] Reduced MIP has 133 rows, 316 columns, and 3801 nonzeros.
+[2019-03-01T08:03:21Z, INFO] Reduced MIP has 0 binaries, 316 generals, 0 SOSs, and 0 indicators.
+[2019-03-01T08:03:21Z, INFO] Presolve time = 0.00 sec. (1.47 ticks)
+[2019-03-01T08:03:21Z, INFO] MIP emphasis: balance optimality and feasibility.
+[2019-03-01T08:03:21Z, INFO] MIP search method: dynamic search.
+[2019-03-01T08:03:21Z, INFO] Parallel mode: deterministic, using up to 10 threads.
+[2019-03-01T08:03:21Z, INFO] Root relaxation solution time = 0.00 sec. (0.71 ticks)
+[2019-03-01T08:03:21Z, INFO] 
+[2019-03-01T08:03:21Z, INFO]         Nodes                                         Cuts/
+[2019-03-01T08:03:21Z, INFO]    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+[2019-03-01T08:03:21Z, INFO] *     0+    0                         4960.0000     1000.0000            79.84%
+[2019-03-01T08:03:21Z, INFO] *     0     0      integral     0     4540.0000     4540.0000       61    0.00%
+[2019-03-01T08:03:21Z, INFO] Elapsed time = 0.03 sec. (11.71 ticks, tree = 0.00 MB
+[2019-03-01T08:03:21Z, INFO] , solutions = 2
+[2019-03-01T08:03:21Z, INFO] )
+[2019-03-01T08:03:21Z, INFO] 
+[2019-03-01T08:03:21Z, INFO] Root node processing (before b&c):
+[2019-03-01T08:03:21Z, INFO]   Real time             =    0.03 sec. (11.76 ticks)
+[2019-03-01T08:03:21Z, INFO] Parallel b&c, 10 threads:
+[2019-03-01T08:03:21Z, INFO]   Real time             =    0.00 sec. (0.00 ticks)
+[2019-03-01T08:03:21Z, INFO]   Sync time (average)   =    0.00 sec.
+[2019-03-01T08:03:21Z, INFO]   Wait time (average)   =    0.00 sec.
+[2019-03-01T08:03:21Z, INFO]                           ------------
+[2019-03-01T08:03:21Z, INFO] Total (root+branch&cut) =    0.03 sec. (11.76 ticks)
+[2019-03-01T08:03:21Z, INFO]   Feasible 4540

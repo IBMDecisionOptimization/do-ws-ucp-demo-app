@@ -1,11 +1,8 @@
 import pandas as pd;
 inputs = {};
 outputs = {};
-inputs["Units"] = pd.read_csv("Units.csv")
-inputs["Loads"] = pd.read_csv("Loads.csv")
-inputs["UnitMaintenances"] = pd.read_csv("UnitMaintenances.csv")
-inputs["Periods"] = pd.read_csv("Periods.csv")
-inputs["Weights"] = pd.read_csv("Weights.csv")
+inputs["resources"] = pd.read_csv("resources.csv")
+inputs["demands"] = pd.read_csv("demands.csv")
 
 from docplex.mp.environment import Environment
 from docplex.mp.model import Model

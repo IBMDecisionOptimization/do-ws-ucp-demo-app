@@ -3,19 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-		"postinstall": "copyfiles -f node_modules/do-ws-js/public/*.js public/do-ws-js && copyfiles -f node_modules/do-ws-js/public/stylesheets/*.css public/do-ws-js/stylesheets && copyfiles -f node_modules/do-ws-js/public/images/*.png public/do-ws-js/images",
+    "postinstall": "copyfiles -f node_modules/do-ws-js/public/*.js public/do-ws-js && copyfiles -f node_modules/do-ws-js/public/stylesheets/*.css public/do-ws-js/stylesheets && copyfiles -f node_modules/do-ws-js/public/images/*.png public/do-ws-js/images",
     "start": "node app.js"
   },
   "dependencies": {
     "@do/dd-gantt-component": "x",
     "axios": "^0.17.1",
-    "sync-request": "x",    
+    "sync-request": "x",
     "body-parser": "x",
     "cfenv": "1.0.x",
     "express": "4.15.x",
     "multer": "x",
     "request": "2.83.x",
-    "do-ws-js": ">=0.1.46",
+    "do-ws-js": ">=0.1.47",
     "gridstack": "*"
   },
   "repository": {},

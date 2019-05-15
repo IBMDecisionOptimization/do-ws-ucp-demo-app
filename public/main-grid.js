@@ -222,6 +222,9 @@ function load() {
         
         scenariogrid = new ScenarioGrid('UnitCommitment Demo', 'scenario_grid_div', scenariomgr, {enableImport:true});
 
+        scenariogrid.addScenarioListWidget(onChangeScenario, 0, 0, 12, 4);
+        scenariogrid.addScenarioChartWidget(onChangeScenario, 0, 0, 12, 6);
+
         scenariogrid.addScenarioWidget(onChangeScenario, 0, 0, 2, 2);
 
         scenariogrid.addKPIsWidget(2, 0, 10, 5);

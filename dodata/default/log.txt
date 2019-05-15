@@ -1,1 +1,72 @@
-[2019-03-01T07:08:28Z, INFO]   Feasible 12141748.3333
+[2019-04-19T08:22:55Z, INFO]             name    value
+[2019-04-19T08:22:55Z, INFO] 0      warehouse  Sevilla
+[2019-04-19T08:22:55Z, INFO] 1  min_order_qty       10
+[2019-04-19T08:22:55Z, INFO] 2    order_delay       10
+[2019-04-19T08:22:55Z, INFO] WARNING: Number of workers has been reduced to 10 to comply with platform limitations.
+[2019-04-19T08:22:55Z, INFO] CPXPARAM_Read_DataCheck                          1
+[2019-04-19T08:22:55Z, INFO] CPXPARAM_Threads                                 10
+[2019-04-19T08:22:55Z, INFO] Tried aggregator 2 times.
+[2019-04-19T08:22:55Z, INFO] MIP Presolve eliminated 192 rows and 10 columns.
+[2019-04-19T08:22:55Z, INFO] MIP Presolve modified 1 coefficients.
+[2019-04-19T08:22:55Z, INFO] Aggregator did 43 substitutions.
+[2019-04-19T08:22:55Z, INFO] Reduced MIP has 180 rows, 277 columns, and 884 nonzeros.
+[2019-04-19T08:22:55Z, INFO] Reduced MIP has 29 binaries, 248 generals, 0 SOSs, and 0 indicators.
+[2019-04-19T08:22:55Z, INFO] Presolve time = 0.01 sec. (0.99 ticks)
+[2019-04-19T08:22:55Z, INFO] Found incumbent of value 87127.000000 after 0.02 sec. (2.27 ticks)
+[2019-04-19T08:22:55Z, INFO] Probing fixed 3 vars, tightened 1048 bounds.
+[2019-04-19T08:22:55Z, INFO] Probing changed sense of 1 constraints.
+[2019-04-19T08:22:55Z, INFO] Probing time = 0.00 sec. (1.73 ticks)
+[2019-04-19T08:22:55Z, INFO] Tried aggregator 2 times.
+[2019-04-19T08:22:55Z, INFO] MIP Presolve eliminated 9 rows and 18 columns.
+[2019-04-19T08:22:55Z, INFO] Aggregator did 5 substitutions.
+[2019-04-19T08:22:55Z, INFO] Reduced MIP has 166 rows, 254 columns, and 772 nonzeros.
+[2019-04-19T08:22:55Z, INFO] Reduced MIP has 26 binaries, 228 generals, 0 SOSs, and 0 indicators.
+[2019-04-19T08:22:55Z, INFO] Presolve time = 0.00 sec. (0.62 ticks)
+[2019-04-19T08:22:55Z, INFO] Probing fixed 0 vars, tightened 214 bounds.
+[2019-04-19T08:22:55Z, INFO] Probing time = 0.00 sec. (1.18 ticks)
+[2019-04-19T08:22:55Z, INFO] Cover probing fixed 0 vars, tightened 63 bounds.
+[2019-04-19T08:22:55Z, INFO] Clique table members: 16.
+[2019-04-19T08:22:55Z, INFO] MIP emphasis: balance optimality and feasibility.
+[2019-04-19T08:22:55Z, INFO] MIP search method: dynamic search.
+[2019-04-19T08:22:55Z, INFO] Parallel mode: deterministic, using up to 10 threads.
+[2019-04-19T08:22:55Z, INFO] Root relaxation solution time = 0.00 sec. (0.74 ticks)
+[2019-04-19T08:22:55Z, INFO] 
+[2019-04-19T08:22:55Z, INFO]         Nodes                                         Cuts/
+[2019-04-19T08:22:55Z, INFO]    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+[2019-04-19T08:22:55Z, INFO] *     0+    0                        87127.0000     2557.0000            97.07%
+[2019-04-19T08:22:55Z, INFO] *     0+    0                        86984.0000     2557.0000            97.06%
+[2019-04-19T08:22:55Z, INFO] *     0+    0                        86841.0000     2557.0000            97.06%
+[2019-04-19T08:22:55Z, INFO] *     0+    0                        86698.0000     2557.0000            97.05%
+[2019-04-19T08:22:55Z, INFO] *     0+    0                        86555.0000     2557.0000            97.05%
+[2019-04-19T08:22:55Z, INFO] *     0+    0                        86412.0000     2557.0000            97.04%
+[2019-04-19T08:22:55Z, INFO]       0     0    11497.1200    29    86412.0000    11497.1200      177   86.69%
+[2019-04-19T08:22:55Z, INFO]       0     0    12194.3797   175    86412.0000     Cuts: 144      348   85.89%
+[2019-04-19T08:22:55Z, INFO]       0     0    12423.3934   177    86412.0000      Cuts: 79      423   85.62%
+[2019-04-19T08:22:55Z, INFO]       0     0    12595.7709   161    86412.0000      Cuts: 37      470   85.42%
+[2019-04-19T08:22:56Z, INFO]       0     0    12664.0605   173    86412.0000      Cuts: 32      502   85.34%
+[2019-04-19T08:22:56Z, INFO]       0     0    12768.0016   171    86412.0000      Cuts: 34      556   85.22%
+[2019-04-19T08:22:56Z, INFO]       0     0    12796.1058   176    86412.0000      Cuts: 31      588   85.19%
+[2019-04-19T08:22:56Z, INFO]       0     0    12797.3685   187    86412.0000      Cuts: 21      599   85.19%
+[2019-04-19T08:22:56Z, INFO]       0     0    12797.9288   186    86412.0000       Cuts: 5      603   85.19%
+[2019-04-19T08:22:56Z, INFO]       0     0    12798.3747   185    86412.0000   Flowcuts: 9      605   85.19%
+[2019-04-19T08:22:56Z, INFO] *     0+    0                        14860.0000    12798.3747            13.87%
+[2019-04-19T08:22:56Z, INFO] *     0+    0                        14566.0000    12798.3747            12.14%
+[2019-04-19T08:22:56Z, INFO]       0     0        cutoff          14566.0000    14566.0000      605    0.00%
+[2019-04-19T08:22:56Z, INFO] Elapsed time = 0.15 sec. (47.81 ticks, tree = 0.01 MB
+[2019-04-19T08:22:56Z, INFO] , solutions = 8
+[2019-04-19T08:22:56Z, INFO] )
+[2019-04-19T08:22:56Z, INFO] Implied bound cuts applied:  30
+[2019-04-19T08:22:56Z, INFO] Flow cuts applied:  32
+[2019-04-19T08:22:56Z, INFO] Mixed integer rounding cuts applied:  23
+[2019-04-19T08:22:56Z, INFO] Zero-half cuts applied:  8
+[2019-04-19T08:22:56Z, INFO] Multi commodity flow cuts applied:  6
+[2019-04-19T08:22:56Z, INFO] Gomory fractional cuts applied:  12
+[2019-04-19T08:22:56Z, INFO] 
+[2019-04-19T08:22:56Z, INFO] Root node processing (before b&c):
+[2019-04-19T08:22:56Z, INFO]   Real time             =    0.15 sec. (47.84 ticks)
+[2019-04-19T08:22:56Z, INFO] Parallel b&c, 10 threads:
+[2019-04-19T08:22:56Z, INFO]   Real time             =    0.00 sec. (0.00 ticks)
+[2019-04-19T08:22:56Z, INFO]   Sync time (average)   =    0.00 sec.
+[2019-04-19T08:22:56Z, INFO]   Wait time (average)   =    0.00 sec.
+[2019-04-19T08:22:56Z, INFO]                           ------------
+[2019-04-19T08:22:56Z, INFO] Total (root+branch&cut) =    0.15 sec. (47.84 ticks)

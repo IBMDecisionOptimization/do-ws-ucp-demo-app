@@ -136,7 +136,7 @@ It looks like (this one if the default one when no workspace is given):
 ```
 
 The difference sections:
-* scenario: some configuration on the different tables (input and output) used in the scenarios.
-* dsx: (optional) configuration of connection to some Watson Studio Local instance to import models and data.
-* do: configuration of how optimization is executed
-* ui: configuration of some additional UI properties, including the use of a separate JS file which will do some more precise setup of the grid layout.
+* **scenario**: some configuration on the different tables (input and output) used in the scenarios.
+* **dsx**: (optional) configuration of connection to some Watson Studio Local instance to import models and data.
+* **do**: configuration of how optimization is executed
+* **ui**: configuration of some additional UI properties, including the use of a separate JS file which will do some more precise setup of the grid layout.

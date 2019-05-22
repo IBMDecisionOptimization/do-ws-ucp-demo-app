@@ -1,0 +1,30 @@
+[2019-03-06T08:38:32Z, INFO] Parameter MaxNewStores = 10
+[2019-03-06T08:38:32Z, INFO] Parameter UseRevenueWithCompetition = False
+[2019-03-06T08:38:32Z, INFO] Parameter MinimumROI = 0.5
+[2019-03-06T08:38:32Z, INFO] Parameter MaximizeRevenue = 10
+[2019-03-06T08:38:33Z, SEVE] KeyError : 'store_geo_code'
+Traceback (most recent call last):
+  File "/python_container/job/model.py", line 342, in <module>
+    for (store_geo, option_id), group in geo_stores.groupby(['store_geo_code','store_option_id']):
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/generic.py", line 3991, in groupby
+    **kwargs)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/groupby.py", line 1511, in groupby
+    return klass(obj, by, **kwds)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/groupby.py", line 370, in __init__
+    mutated=self.mutated)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/groupby.py", line 2462, in _get_grouper
+    in_axis, name, gpr = True, gpr, obj[gpr]
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/frame.py", line 2059, in __getitem__
+    return self._getitem_column(key)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/frame.py", line 2066, in _getitem_column
+    return self._get_item_cache(key)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/generic.py", line 1386, in _get_item_cache
+    values = self._data.get(item)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/core/internals.py", line 3543, in get
+    loc = self.items.get_loc(item)
+  File "/opt/conda/lib/python2.7/site-packages/pandas/indexes/base.py", line 2136, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/index.pyx", line 132, in pandas.index.IndexEngine.get_loc (pandas/index.c:4433)
+  File "pandas/index.pyx", line 154, in pandas.index.IndexEngine.get_loc (pandas/index.c:4279)
+  File "pandas/src/hashtable_class_helper.pxi", line 732, in pandas.hashtable.PyObjectHashTable.get_item (pandas/hashtable.c:13742)
+  File "pandas/src/hashtable_class_helper.pxi", line 740, in pandas.hashtable.PyObjectHashTable.get_item (pandas/hashtable.c:13696)

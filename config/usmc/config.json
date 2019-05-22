@@ -1,23 +1,24 @@
 {
     "name": "USMC",
     "scenario" : {        
-        "assignmentCompatibilityRules" : { "title":"Assignment Compatibility Rules"},
-        "commands" : { "title":"Commands"},
-        "currentSchedule" : { "title":"Current Schedule"},
-        "excludedDeployment": { "title":"Excluded Deployment"},
-        "fixedDeployment": { "title": "Fixed Deployment"},
-        "mttr": {"title" : "MTTR"},
-        "requirements" : { "id": "reqName", "title":"Requirements" },
-        "taskForces" :{ "title":"Task Forces"},
-        "unitTypes": {"title":"Unit Types", "id":"unitType", "allowEdition":true},
-        "units" : { "id":"unitCode", "title":"Units" },
+        "config" : {
+            "assignmentCompatibilityRules" : { "title":"Assignment Compatibility Rules"},
+            "commands" : { "title":"Commands"},
+            "currentSchedule" : { "title":"Current Schedule"},
+            "excludedDeployment": { "title":"Excluded Deployment"},
+            "fixedDeployment": { "title": "Fixed Deployment"},
+            "mttr": {"title" : "MTTR"},
+            "requirements" : { "id": "reqName", "title":"Requirements" },
+            "taskForces" :{ "title":"Task Forces"},
+            "unitTypes": {"title":"Unit Types", "id":"unitType", "allowEdition":true},
+            "units" : { "id":"unitCode", "title":"Units" },
 
-        "assignmentStats" : { "title":"Assignment Stats" },
-        "updatedSchedule" : { "title":"Optimized Schedule"},
-        "kpis" : { "title":"KPIs" },
+            "assignmentStats" : { "title":"Assignment Stats" },
+            "updatedSchedule" : { "title":"Optimized Schedule"},
+            "kpis" : { "title":"KPIs" },
 
-        "summary" : { "id":"unit", "title":"Summary" }
-
+            "summary" : { "id":"unit", "title":"Summary" }
+        }
     },
     "dsx" : {
         "type" : "local",

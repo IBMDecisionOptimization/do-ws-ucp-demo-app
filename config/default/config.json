@@ -1,16 +1,18 @@
 {
     "name": "UCP",
     "scenario" : {        
-        "Units" : { "id":"Units", "title":"Units", "allowEdition":true},        
-        "Loads" : {  "id":"Periods", "title":"Load", "allowEdition":true},
-        "UnitMaintenances" : {"id":null, "title":"Maintenances", "allowEdition":true, "maxSize":1680},
-        "Periods" : { "id":"Id", "title":"Periods"},
-        "Weights" : { "id":"Id", "title":"Weights", "allowEdition":true},
+        "config" : {
+            "Units" : { "id":"Units", "title":"Units", "allowEdition":true},        
+            "Loads" : {  "id":"Periods", "title":"Load", "allowEdition":true},
+            "UnitMaintenances" : {"id":null, "title":"Maintenances", "allowEdition":true, "maxSize":1680},
+            "Periods" : { "id":"Id", "title":"Periods"},
+            "Weights" : { "id":"Id", "title":"Weights", "allowEdition":true},
 
-        "production" : { "title":"Production", "columns": ["Units", "Periods", "value"] },
-        "started" : { "title":"Started", "columns": ["Units", "Periods", "value"]},
-        "used" : { "title":"Used", "columns": ["Units", "Periods", "value"]},
-        "kpis" : { "id":"kpi", "title":"KPIs"}
+            "production" : { "title":"Production", "columns": ["Units", "Periods", "value"] },
+            "started" : { "title":"Started", "columns": ["Units", "Periods", "value"]},
+            "used" : { "title":"Used", "columns": ["Units", "Periods", "value"]},
+            "kpis" : { "id":"kpi", "title":"KPIs"}
+        }
     },
     "dsx" : {
         "type" : "local",
@@ -26,7 +28,7 @@
         "model": "model.py"
     },
     "ui" : {
-        "title": "Unit Commitment Demo",
+        "title": "Unit Commitment",
         "grid" : "grid.js"
     }
 

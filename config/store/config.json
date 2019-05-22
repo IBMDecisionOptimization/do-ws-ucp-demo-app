@@ -1,5 +1,5 @@
 {
-    "name": "Supply Demand",
+    "name": "Store Planner",
     "scenario" : {        
         "config" : {
         }
@@ -18,7 +18,7 @@
         "model": "model.py"
     },
     "ui" : {
-        "title": "Supply Demand",
+        "title": "Store Planner",
         "grid" : "grid.js"
     }
 

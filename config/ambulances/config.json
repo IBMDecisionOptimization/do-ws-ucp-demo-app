@@ -1,11 +1,13 @@
 {
     "name": "Ambulances",
-    "scenario" : {        
-        "parameters" : { "title":"name", "title":"Parameters", "allowEdition":true},
-        "predicted-accidents" : { "id":"id", "title":"Predicted Accidents", "allowEdition":true},
+    "scenario" : {      
+        "config" : {  
+            "parameters" : { "title":"name", "title":"Parameters", "allowEdition":true},
+            "predicted-accidents" : { "id":"id", "title":"Predicted Accidents", "allowEdition":true},
 
-        "ambulances" : { "title":"Ambulances"},
-        "links" : { "title":"Links"}
+            "ambulances" : { "title":"Ambulances"},
+            "links" : { "title":"Links"}
+        }
     },
     "dsx" : {
         "type" : "local",
@@ -17,7 +19,8 @@
       },
 
     "ui" : {
-        "title": "Ambulances"
+        "title": "Ambulances",
+        "grid": "grid.js"
     }
 
 }

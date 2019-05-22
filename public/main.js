@@ -19,24 +19,8 @@ function getConfig(workspace, cb) {
                 cb(workspace)
         });
 }
-
-function configCB(workspace) {
-
-        scenariocfg = config.scenario;
-        scenariocfg["$scenario"] = { cb : showInputsAndOutputs }
-
-        scenariomgr = new ScenarioManager(config.scenario, workspace);        
-
-        scenariomgr.loadScenarios();
-        
-        let title = 'UnitCommitment Demo';
-        if ( ('ui' in config) &&
-                ('title' in config.ui) )
-                title = config.ui.title;
-
-        scenariogrid = new ScenarioGrid(title, 'scenario_grid_div', scenariomgr, {enableImport:true});
-
-
+var initDone = false;
+function initGrid() {
         if ('ui' in config && 'grid' in config.ui) {
                 let url = './api/config/file?fileName='+config.ui.grid;
                 if (workspace != undefined)
@@ -49,11 +33,31 @@ function configCB(workspace) {
                 .then(function (response) {
                         let grid = response.data;
                         eval(grid);
+                        scenariogrid.redraw();
                 }); 
         } else {
                 // default
                 scenariogrid.dodefaultdashboard();
+                scenariogrid.redraw();
         }
+        initDone = true;
+}
+function configCB(workspace) {
+
+        scenariocfg = config.scenario.config;
+        scenariocfg["$scenario"] = { cb : showInputsAndOutputs }
+
+        scenariomgr = new ScenarioManager(scenariocfg, workspace);        
+
+        scenariomgr.loadScenarios();
+        
+        let title = 'UnitCommitment Demo';
+        if ( ('ui' in config) &&
+                ('title' in config.ui) )
+                title = config.ui.title;
+        document.title = title;
+        scenariogrid = new ScenarioGrid(title, 'scenario_grid_div', scenariomgr, {enableImport:true});
+
 
 }
 function load() {               
@@ -75,5 +79,7 @@ function onChangeScenario() {
 
 
 function showInputsAndOutputs(scenario) {
+        if (!initDone)
+                initGrid();
         scenariogrid.redraw();
 }

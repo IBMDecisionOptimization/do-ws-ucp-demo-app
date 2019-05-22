@@ -87,6 +87,7 @@ It imports the modules and call the function so that the APIs are setup.
 var dods = require('do-ws-js/dods');
 dods.routeScenario(router);
 dods.routeSolve(router);
+
 var dodsxpa = require('do-ws-js/dodsxpa');
 dodsxpa.routeConfig(router);
 dodsxpa.routeDSX(router);

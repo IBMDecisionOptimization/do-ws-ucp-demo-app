@@ -1,0 +1,23 @@
+{
+    "name": "Ambulances",
+    "scenario" : {        
+        "parameters" : { "title":"name", "title":"Parameters", "allowEdition":true},
+        "predicted-accidents" : { "id":"id", "title":"Predicted Accidents", "allowEdition":true},
+
+        "ambulances" : { "title":"Ambulances"},
+        "links" : { "title":"Links"}
+    },
+    "dsx" : {
+        "type" : "local",
+        "apiurl": "https://bcp.datascienceelite.com",
+        "url": "https://bcp.datascienceelite.com",
+        "login": "alain.chabrier@ibm.com",
+        "password": "Hot6cold",
+        "projectName": "PA3"
+      },
+
+    "ui" : {
+        "title": "Ambulances"
+    }
+
+}

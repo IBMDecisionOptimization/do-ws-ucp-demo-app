@@ -1,0 +1,33 @@
+{
+    "name": "UCP",
+    "scenario" : {        
+        "Units" : { "id":"Units", "title":"Units", "allowEdition":true},        
+        "Loads" : {  "id":"Periods", "title":"Load", "allowEdition":true},
+        "UnitMaintenances" : {"id":null, "title":"Maintenances", "allowEdition":true, "maxSize":1680},
+        "Periods" : { "id":"Id", "title":"Periods"},
+        "Weights" : { "id":"Id", "title":"Weights", "allowEdition":true},
+
+        "production" : { "title":"Production", "columns": ["Units", "Periods", "value"] },
+        "started" : { "title":"Started", "columns": ["Units", "Periods", "value"]},
+        "used" : { "title":"Used", "columns": ["Units", "Periods", "value"]},
+        "kpis" : { "id":"kpi", "title":"KPIs"}
+    },
+    "dsx" : {
+        "type" : "local",
+        "apiurl": "https://bcp.datascienceelite.com",
+        "url": "https://bcp.datascienceelite.com",
+        "login": "alain.chabrier@ibm.com",
+        "password": "Hot6cold",
+        "projectName": "PA3"
+      },
+    "do" : {  
+        "url":  "https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/",
+        "key": "api_7fe447c0-46eb-4f68-a7e5-196c95be0260",
+        "model": "model.py"
+    },
+    "ui" : {
+        "title": "Unit Commitment Demo",
+        "grid" : "grid.js"
+    }
+
+}

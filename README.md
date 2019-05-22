@@ -48,7 +48,6 @@ The HTML code is completely generic:
 In the load() function it loads the config form the back end:
 ```
 function load() {               
-
         workspace = location.search.split('workspace=')[1]
         if (workspace == undefined)
                 workspace = "default";
@@ -57,10 +56,13 @@ function load() {
 };
 ```
 
-Then the configuration callback is called and create a scenario manager and a scenario grid using the configuratiosn received.
+Then the configuration callback is called and:
+* create a scenario manager,
+* loads the scenarios from the back-end,
+* creates a scenario grid 
+using the configurations received.
 ```
 function configCB(workspace) {
-
         scenariocfg = config.scenario.config;
         scenariocfg["$scenario"] = { cb : showInputsAndOutputs }
 
@@ -74,8 +76,6 @@ function configCB(workspace) {
                 title = config.ui.title;
         document.title = title;
         scenariogrid = new ScenarioGrid(title, 'scenario_grid_div', scenariomgr, {enableImport:true});
-
-
 }
 ```
 
@@ -84,17 +84,11 @@ The back end side code app.js file is also completely generic.
 
 It imports the modules and call the function so that the APIs are setup.
 ```
-
 var dods = require('do-ws-js/dods');
-
 dods.routeScenario(router);
-
 dods.routeSolve(router);
-
 var dodsxpa = require('do-ws-js/dodsxpa');
-
 dodsxpa.routeConfig(router);
-
 dodsxpa.routeDSX(router);
 ```
 

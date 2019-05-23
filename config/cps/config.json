@@ -1,0 +1,33 @@
+{
+    "name": "CPS",
+    "scenario" : {      
+        "config" : {  
+            "Task" : { "id":"Id", "title":"Tasks", "allowEdition":true},
+            "Individual_Resource" : { "id":"Id", "title":"Individual Resources", "allowEdition":true},
+            "Module" : {  "id":"Id", "title":"Modules"},
+            "Finite_Capacity_Resource" : { "id":"Id", "title":"Finite Capacity Resources"},
+            "FCResource_Request" : { "title":"Requests"},
+            "list_of_SchedulingAssignment_solution" : { "title":"Scheduling Assignment"},
+            "list_of_Task_solution" : { "title":"Task Solution"},
+            "kpis" : { "title":"KPI"}
+    
+        }
+    },
+    "dsx" : {
+        "type" : "local",
+        "apiurl": "https://bcp.datascienceelite.com",
+        "url": "https://bcp.datascienceelite.com",
+        "login": "alain.chabrier@ibm.com",
+        "password": "Hot6cold",
+        "projectName": "PA3"
+      },
+    "do" : {
+        "url" : "https://9.20.64.100/dsvc/v1/cps/domodel/optim/model/CPS_LM_saved",
+        "key" : "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsYWluLmNoYWJyaWVyQGlibS5jb20iLCJwYWNrYWdlTmFtZSI6IkNQUy1MTSIsInBhY2thZ2VSb3V0ZSI6ImNwcyIsImlhdCI6MTUzOTE1NDkxOH0.CyjaeavOZX0-RR5YRe_xwfJo5YCA7VByxHSqAfJYYQCNDmI_sqg5WA04fhZB0rTLio_n23OQs2mSFN_8OUVbAl0RpXVP_DtVYpSClXP34wZ99_b-mSO-Z_I4GQuuZAUi8KWf3fwdzL7DyGw3C8bdXuOU9pwDBlr53QaYxTXzxS9VLpw-rHsAEI68KOjUmRG_ShltixK4TOaV0QTBp2MktZX3IY4kVtoYpGzlL0q9tDCVUDuThcuU43vldD9Um2ar_3bZtN9W1sIAzia0MG6qcU3FKuSdj62ab6sA8B8YHMj6OcsLQpXNzMf_h-1qC7PH6OMI1OMn_atinST6i7LkkA"
+    },
+    "ui" : {
+        "title": "CPS",
+        "grid": "grid.js"
+    }
+
+}

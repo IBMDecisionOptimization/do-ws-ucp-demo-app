@@ -1,0 +1,21 @@
+{
+    "name": "Shelf",
+    "scenario" : {        
+        "config" : {
+          
+        }
+    },
+    "dsx" : {
+        "type" : "local",
+        "apiurl": "https://bcp.datascienceelite.com",
+        "url": "https://bcp.datascienceelite.com",
+        "login": "alain.chabrier@ibm.com",
+        "password": "Hot6cold",
+        "projectName": "PA3"
+      },
+    "ui" : {
+        "title": "Shelf",
+        "gridjs": "grid.js"
+    }
+
+}

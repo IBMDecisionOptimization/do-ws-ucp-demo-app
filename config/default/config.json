@@ -29,7 +29,7 @@
     },
     "ui" : {
         "title": "Unit Commitment",
-        "grid" : "grid.js"
+        "gridjs" : "grid.js"
     }
 
 }

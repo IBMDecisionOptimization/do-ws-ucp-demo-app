@@ -19,7 +19,7 @@
     },
     "ui" : {
         "title": "Supply Demand",
-        "grid" : "grid.js"
+        "gridjs" : "grid.js"
     }
 
 }

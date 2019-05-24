@@ -21,8 +21,8 @@ function getConfig(workspace, cb) {
 }
 var initDone = false;
 function initGrid() {
-        if ('ui' in config && 'grid' in config.ui) {
-                let url = './api/config/file?fileName='+config.ui.grid;
+        if ('ui' in config && 'gridjs' in config.ui) {
+                let url = './api/config/file?fileName='+config.ui.gridjs;
                 if (workspace != undefined)
                         url += '&workspace='+workspace;
                 axios({

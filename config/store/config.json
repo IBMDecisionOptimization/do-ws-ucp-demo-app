@@ -19,7 +19,7 @@
     },
     "ui" : {
         "title": "Store Planner",
-        "grid" : "grid.js"
+        "gridjs" : "grid.js"
     }
 
 }

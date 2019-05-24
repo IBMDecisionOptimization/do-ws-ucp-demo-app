@@ -27,7 +27,7 @@
     },
     "ui" : {
         "title": "CPS",
-        "grid": "grid.js"
+        "gridjs": "grid.js"
     }
 
 }

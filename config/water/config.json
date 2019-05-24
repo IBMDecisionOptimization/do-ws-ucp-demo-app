@@ -29,7 +29,7 @@
     },
     "ui" : {
         "title": "Water",
-        "grid" : "grid.js"
+        "gridjs" : "grid.js"
     }
 
 }

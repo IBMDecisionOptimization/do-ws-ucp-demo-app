@@ -1,5 +1,5 @@
 {
-    "name": "Shelf",
+    "name": "Shelf Space Optimization",
     "description" :"Optimzaly dispose different sales elements on a shelf with multiple rows so that different criterias are respected and obejctive maximized.",
     "scenario" : {        
         "config" : {
@@ -15,7 +15,7 @@
         "projectName": "PA3"
       },
     "ui" : {
-        "title": "Shelf",
+        "title": "Shelf Space Optimization",
         "gridjs": "grid.js"
     }
 

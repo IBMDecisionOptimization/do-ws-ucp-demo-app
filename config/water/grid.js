@@ -97,7 +97,12 @@ function sankeycb() {
                                         });
         };
 
-        d3sankey("sankey_div", graph, {top: 10, right: 10, bottom: 10, left: 10, width:1000  , height: 800});
+        let div = document.getElementById('sankey_div');
+
+        let vw = div.parentNode.clientWidth-50;
+        let vh = div.parentNode.clientHeight-50;
+
+        d3sankey("sankey_div", graph, {top: 10, right: 10, bottom: 10, left: 10, width:vw  , height: vh});
 
 }
 

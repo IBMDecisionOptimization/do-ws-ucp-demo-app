@@ -1,5 +1,6 @@
 {
     "name": "Supply Demand",
+    "description" :"Sales and Operations PLanning of a production,m distribution and sale supply chain. Decide what and where to build samong several prolants and products. Decide where and how much to stock. Decided where and ow to much to assign for different markets.",
     "scenario" : {        
         "config" : {
         }

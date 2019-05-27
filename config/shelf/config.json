@@ -1,5 +1,6 @@
 {
     "name": "Shelf",
+    "description" :"Optimzaly dispose different sales elements on a shelf with multiple rows so that different criterias are respected and obejctive maximized.",
     "scenario" : {        
         "config" : {
           

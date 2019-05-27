@@ -1,5 +1,6 @@
 {
     "name": "Ambulances",
+    "description": "Based on the clustered predicted set of accidents, optimally place the ambulances so that emergency can be managed as fast as possible.",
     "scenario" : {      
         "config" : {  
             "parameters" : { "title":"name", "title":"Parameters", "allowEdition":true},

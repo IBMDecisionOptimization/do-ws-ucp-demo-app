@@ -1,5 +1,6 @@
 {
     "name": "CPS",
+    "description" :"Schedule maintenance of a set of planes, including thousands of tasks organized into projects, taking into account the resources needs for different skills.",
     "scenario" : {      
         "config" : {  
             "Task" : { "id":"Id", "title":"Tasks", "allowEdition":true},

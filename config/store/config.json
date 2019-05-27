@@ -1,5 +1,6 @@
 {
     "name": "Store Planner",
+    "description" :"Optimzaly decide where to open new stores based on expectating of visit for different cyustoemr areas. Take into consideration existing shops, including those from other brands.",
     "scenario" : {        
         "config" : {
         }

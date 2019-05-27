@@ -1,5 +1,6 @@
 {
-    "name": "UCP",
+    "name": "Unit Commitment",
+    "description" :"Based on predicted electricity consumption load, plan thd operations of different electricity produciotn units so that operational costs are minimized along with carbon diozyde emissions.",
     "scenario" : {       
         "config" : { 
             "Units" : { "id":"Units", "title":"Units", "allowEdition":true},        

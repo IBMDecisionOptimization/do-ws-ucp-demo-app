@@ -194,7 +194,7 @@ function ganttcb() {
 
 scenariogrid.addScenarioWidget(onChangeScenario, 0, 0, 2, 2);
 
-scenariogrid.addKPIsWidget(2, 0, 10, 5);
+scenariogrid.addKPIsWidget(0, 18, 12, 6);
 
 scenariogrid.addSolveWidget(0, 2);
 
@@ -218,11 +218,12 @@ let demandcfg = {
 
 scenariogrid.addCustomWidget('demand_chart', demandcfg);
 
+
 let chartcfg = { 
-        x: 0,
-        y: 18,
-        width: 12,
-        height: 6,
+        x: 2,
+        y: 0,
+        width: 10,
+        height: 5,
         title: "Production chart",
         innerHTML: '<div id="chart" style="width: 100%; height: calc(100% - 30px);"><svg></svg></div>',
         cb: nvd3cb

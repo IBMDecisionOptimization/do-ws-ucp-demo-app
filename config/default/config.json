@@ -14,7 +14,7 @@
             "kpis" : { "id":"kpi", "title":"KPIs"}
         }
     },
-    "dsx" : {
+    "dsxlocal" : {
         "type" : "local",
         "apiurl": "https://bcp.datascienceelite.com",
         "url": "https://bcp.datascienceelite.com",
@@ -22,6 +22,13 @@
         "password": "Hot6cold",
         "projectName": "PA3"
       },
+    "dsx": {
+        "type": "cloud",
+        "url": "https://eu-de.dataplatform.cloud.ibm.com",
+        "apiurl": "https://api.eu-de.dataplatform.cloud.ibm.com",
+        "apikey": "4GX05NVAMZI0mqR4zsbpvJojY81jS17LaAMQPaEddEkR",
+        "projectName": "PA3"
+    },      
     "do" : {  
         "url":  "https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/",
         "key": "api_7fe447c0-46eb-4f68-a7e5-196c95be0260",

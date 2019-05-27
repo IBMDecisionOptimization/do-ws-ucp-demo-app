@@ -14,7 +14,7 @@
             "kpis" : { "id":"kpi", "title":"KPIs"}
         }
     },
-    "dsx" : {
+    "dsxlocal" : {
         "type" : "local",
         "apiurl": "https://bcp.datascienceelite.com",
         "url": "https://bcp.datascienceelite.com",
@@ -22,7 +22,7 @@
         "password": "Hot6cold",
         "projectName": "PA3"
       },
-    "dsxcloud": {
+    "dsx": {
         "type": "cloud",
         "url": "https://eu-de.dataplatform.cloud.ibm.com",
         "apiurl": "https://api.eu-de.dataplatform.cloud.ibm.com",

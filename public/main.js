@@ -19,8 +19,16 @@ function getConfig(workspace, cb) {
                 cb(workspace)
         });
 }
+
+function testui() {
+        
+                
+}
 var initDone = false;
 function initGrid() {
+
+        // testui();
+        // return;
         if ('ui' in config && 'gridjs' in config.ui) {
                 let url = './api/config/file?fileName='+config.ui.gridjs;
                 if (workspace != undefined)

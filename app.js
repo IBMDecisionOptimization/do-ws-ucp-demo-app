@@ -38,6 +38,8 @@ dods.routeScenario(router);
 
 dods.routeSolve(router);
 
+dods.routeScore(router);
+
 var dodsxpa = require('do-ws-js/dodsxpa');
 
 dodsxpa.routeConfig(router);

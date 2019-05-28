@@ -126,11 +126,12 @@ scenariogrid.addCustomWidget('sankey', sankeycfg);
 
              
 
+
 function treecb() {
 
 
         let scenario = scenariomgr.getSelectedScenario();
-    
+
         let div = document.getElementById('tree_div');
 
         div.innerHTML = "";
@@ -205,8 +206,8 @@ function treecb() {
         .on("click", function(d) { return zoom(node == d.parent ? root : d.parent); });
 
         cell.append("svg:rect")
-        .attr("width", function(d) { return d.dx - 1; })
-        .attr("height", function(d) { return d.dy - 1; })
+        .attr("width", function(d) { return Math.max(0, d.dx - 1); })
+        .attr("height", function(d) { return Math.max(0, d.dy - 1); })
         .style("fill", function(d) {
                 return color(d.parent.name); 
         });
@@ -218,6 +219,29 @@ function treecb() {
         .attr("text-anchor", "middle")
         .text(function(d) { return d.name; })
         .style("opacity", function(d) { d.w = this.getComputedTextLength(); return d.dx > d.w ? 1 : 0; });
+
+        var tooltip = d3.select("body").append("div")
+        .style("position", "absolute")
+        .style("display", "none")
+        .style("width", "auto")
+        .style("height", "auto")
+        .style("background", "none repeat scroll 0 0 white")
+        .style("border", "0 none")
+        .style("border-radius", "8px 8px 8px 8px")
+        .style("box-shadow", "-3px 3px 15px #888888")
+        .style("color", "black")
+        .style("font", "12px sans-serif")
+        .style("padding", "5px")
+
+        cell
+        .on("mouseover", function(){return tooltip.style("display", "inline-block");})
+        .on("mousemove", function(d){ tooltip.style("left", d3.event.pageX + 10 + "px")
+                tooltip.style("top", d3.event.pageY - 20 + "px")
+                tooltip.style("display", "inline-block")
+                tooltip.html(d.parent.name +" produces " + d.value + " units of " + d.name + "<br>")})
+
+        .on("mouseout", function(){return tooltip.style("display", "none");});
+
 
         d3.select(window).on("click", function() { zoom(root); });
 
@@ -254,10 +278,10 @@ function treecb() {
                 d3.event.stopPropagation();
         }
 }
-    
-    
-    
-    
+
+
+
+
 let treecfg = { 
         x: 2,
         y: 0,
@@ -269,4 +293,3 @@ let treecfg = {
 }
         
 scenariogrid.addCustomWidget('tree', treecfg);
-        

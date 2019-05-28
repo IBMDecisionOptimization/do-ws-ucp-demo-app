@@ -25,7 +25,7 @@ function load() {
                         html += '<a href="../?workspace=' + workspace + '">Go to ' + workspace + '</a/'; 
                         dl.innerHTML = html;
                         dl.style.float = 'left';
-                        dl.style.width = '30%';
+                        dl.style.width = '20%';
                         dl.style.padding = '10px';
                         div.append(dl);
                         let dr = document.createElement("div"); 
@@ -34,7 +34,7 @@ function load() {
                         html += '</iframe>';
                         dr.innerHTML = html;
                         dr.style.float = 'right';
-                        dr.style.width = '70%';
+                        dr.style.width = '80%';
                         div.append(dr);
                         let dc = document.createElement("div"); 
                         dc.style.clear = 'both';

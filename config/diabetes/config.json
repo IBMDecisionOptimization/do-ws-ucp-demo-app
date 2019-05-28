@@ -1,0 +1,51 @@
+{
+	"name": "Diabetes",
+	"scenario": {
+		"config" :{
+			"Diabetes" : { "id":"Diabetes", "allowEdition":true}
+		}
+	},
+	"ml": {
+		"url": "https://us-south.ml.cloud.ibm.com/v3/wml_instances/8a69e5fe-b112-4b92-adfd-0dbce326332b/deployments/25b7a943-3578-4e88-a308-432718177678/online",
+		"apikey": "4GX05NVAMZI0mqR4zsbpvJojY81jS17LaAMQPaEddEkR",
+		"input": "Diabetes",
+		"output": "DiabetesOutcome",
+		"action": {
+			"text": "PREDICT",
+			"alertErrors": true
+		}
+	},
+	"ui" : {
+		"title": "Diabetes"
+	},	
+	"mapping" : {
+		"versionDimensionName": "Version",
+		"input": {
+			"version": "Baseline",
+			"dimensions": {
+				"Diabetes": {
+					"name": "Diabetes"
+				}
+			},
+			"cubes": {
+				"Diabetes": {
+					"name": "Diabetes",
+					"propertyDimensionName": "DiabeteProperties"
+				}
+			}
+		},
+		"output": {
+			"version": "Baseline",
+			"cubes": {
+				"DiabetesOutcome": {
+					"name": "DiabetesOutcome"
+				}			
+			},
+			"prefix": ""
+		}
+	},
+	"ui": {
+		"title": "Diabetes",
+		"gridjs": "grid.js"
+	}
+}

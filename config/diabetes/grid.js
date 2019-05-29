@@ -5,10 +5,14 @@ scenariogrid.addScenarioWidget(onChangeScenario, 0, 0, 2, 2);
         
 scenariogrid.addScoreWidget(0, 2, 2, 2);
 
-
+function pad(num, size) {
+        var s = num+"";
+        while (s.length < size) s = "0" + s;
+        return s;
+    }
 function getArea(what, val) {
         let m = 10 * Math.trunc(val /10);
-        return what + '[' + m + "-" + (m+1) + ']';
+        return what + '[' + pad(m,3) + "-" + pad(m+9,3) + ']';
 }
 let plants = []
 function getInType(plant) {
@@ -137,3 +141,118 @@ scenariogrid.addTablesWidget('Inputs', 'input', undefined, 0, 6, 6, 4);
 
 scenariogrid.addTablesWidget('Outputs', 'output', undefined, 6, 6, 6, 4);
 
+
+function heatmapinputcb() {
+        let scenario = scenariomgr.getSelectedScenario();
+        
+        let data1 = {}
+        let inputs = scenario.getTableRows('Diabetes');
+        let outcomes = scenario.getTableRows('DiabetesOutcome');
+        for (l in inputs) {
+                let input = inputs[l];
+                let outcome = 1;
+
+                let x = getArea('Glucose', input.Glucose);
+                let y = getArea('Age', input.Age);
+
+                if (x in data1) {
+                        if (y in data1[x])
+                                data1[x][y] = data1[x][y] + outcome;
+                        else
+                                data1[x][y] =  outcome;
+                } else {
+                        data1[x] = {};
+                        data1[x][y] = outcome;
+                }
+        }
+        let data = []
+        for (x in data1)
+                for (y in data1[x])
+                        data.push({
+                                x:x, 
+                                y:y, 
+                                value:data1[x][y],
+                                tooltip: x + '-' + y + ': ' + data1[x][y]
+                        });
+
+        let div = document.getElementById('heatmap_input_div');
+
+        config = {
+                width: div.parentNode.clientWidth-50,
+                height: div.parentNode.clientHeight-180,
+                top: 120, right: 20, bottom: 20, left: 110
+                }
+        d3heatmap('heatmap_input_div', data, config)
+}
+
+
+let heatmapinputcfg = { 
+        x: 0,
+        y: 10,
+        width: 6,
+        height: 5,
+        title: "Input data",
+        innerHTML: '<div id="heatmap_input_div" style="width:100%; height: calc(100% - 30px);"></div>',
+        cb: function () {heatmapinputcb();}
+    }
+    
+scenariogrid.addCustomWidget('heatmap_input',  heatmapinputcfg);
+    
+
+
+function heatmapoutputcb() {
+        let scenario = scenariomgr.getSelectedScenario();
+        
+        let data1 = {}
+        let inputs = scenario.getTableRows('Diabetes');
+        let outcomes = scenario.getTableRows('DiabetesOutcome');
+        for (l in inputs) {
+                let input = inputs[l];
+                let outcome = parseInt(outcomes[l].value);
+
+                let x = getArea('Glucose', input.Glucose);
+                let y = getArea('Age', input.Age);
+
+                if (x in data1) {
+                        if (y in data1[x])
+                                data1[x][y] = data1[x][y] + outcome;
+                        else
+                                data1[x][y] =  outcome;
+                } else {
+                        data1[x] = {};
+                        data1[x][y] = outcome;
+                }
+        }
+        let data = []
+        for (x in data1)
+                for (y in data1[x])
+                        data.push({
+                                x:x, 
+                                y:y, 
+                                value:data1[x][y],
+                                tooltip: x + '-' + y + ': ' + data1[x][y]
+                        });
+
+        let div = document.getElementById('heatmap_output_div');
+
+        config = {
+                width: div.parentNode.clientWidth-50,
+                height: div.parentNode.clientHeight-180,
+                top: 120, right: 20, bottom: 20, left: 110
+                }
+        d3heatmap('heatmap_output_div', data, config)
+}
+
+
+let heatmapoutputcfg = { 
+        x: 6,
+        y: 10,
+        width: 6,
+        height: 5,
+        title: "Output data",
+        innerHTML: '<div id="heatmap_output_div" style="width:100%; height: calc(100% - 30px);"></div>',
+        cb: function () {heatmapoutputcb();}
+    }
+    
+scenariogrid.addCustomWidget('heatmap_output',  heatmapoutputcfg);
+    

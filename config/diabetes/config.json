@@ -1,5 +1,6 @@
 {
 	"name": "Diabetes",
+	"description": "Based on different characteristics, a trained ML model predicts whether a diabetes is to be expected or not. (This does not include DO model, only ML model).",
 	"scenario": {
 		"config" :{
 			"Diabetes" : { "id":"Diabetes", "allowEdition":true}

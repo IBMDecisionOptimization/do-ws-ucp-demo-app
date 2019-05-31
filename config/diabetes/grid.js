@@ -5,6 +5,8 @@ scenariogrid.addScenarioWidget(onChangeScenario, 0, 0, 2, 2);
         
 scenariogrid.addScoreWidget(0, 2, 2, 2);
 
+scenariogrid.addPAWidget(0, 4);
+
 function pad(num, size) {
         var s = num+"";
         while (s.length < size) s = "0" + s;
@@ -177,9 +179,9 @@ function heatmapinputcb() {
 
         let div = document.getElementById('heatmap_input_div');
 
-        config = {
-                width: div.parentNode.clientWidth-50,
-                height: div.parentNode.clientHeight-180,
+        let config = {
+                width: div.parentNode.clientWidth-30,
+                height: div.parentNode.clientHeight-30,
                 top: 120, right: 20, bottom: 20, left: 110
                 }
         d3heatmap('heatmap_input_div', data, config)
@@ -235,9 +237,9 @@ function heatmapoutputcb() {
 
         let div = document.getElementById('heatmap_output_div');
 
-        config = {
-                width: div.parentNode.clientWidth-50,
-                height: div.parentNode.clientHeight-180,
+        let config = {
+                width: div.parentNode.clientWidth-30,
+                height: div.parentNode.clientHeight-30,
                 top: 120, right: 20, bottom: 20, left: 110
                 }
         d3heatmap('heatmap_output_div', data, config)

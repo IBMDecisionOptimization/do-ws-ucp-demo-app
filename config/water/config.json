@@ -16,17 +16,9 @@
             "kpis" : { }
         }
     },
-    "dsx" : {
-        "type" : "local",
-        "apiurl": "https://bcp.datascienceelite.com",
-        "url": "https://bcp.datascienceelite.com",
-        "login": "alain.chabrier@ibm.com",
-        "password": "Hot6cold",
-        "projectName": "PA3"
-      },
     "do" : {  
         "url": "https://9.20.64.100/dsvc/v1/water/domodel/optim2/model/WaterOptimSaved2",
-        "key": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsYWluLmNoYWJyaWVyQGlibS5jb20iLCJwYWNrYWdlTmFtZSI6IldhdGVyIiwicGFja2FnZVJvdXRlIjoid2F0ZXIiLCJpYXQiOjE1MzgzOTgyMzd9.AS8oXev1id5w9VYRRovE1RSAsOAPtiFu9j1a9z42s7wKxN9nHaTnPzK7740hd6ThTYOcBScjNQuy9xJ1sHn4Cq4CUyJsAXryiYlT5uqpb3L5KzRhJkuxg0Vxx82HPLAi0Wo82bKm96ODTgxSEfnFxxRXTiJZ3iyMdgJOeUjybgnQxDBBZAA0sd-O4duQEzCg0PBhK3rVRf0zDjqQMv4l1EWgV9tRwhbKxSHabLFDky5Griu91h9FOwXQ41FPgQjl6VPCVN0mqxAKty8ZJU3-YM23LZShnco4Khv-VFa7BsVo7byG92Nz99lkiSfAl0LH_D0pNWVLRNQbN9tWwexS-A"
+        "key": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     },
     "ui" : {
         "title": "Water",

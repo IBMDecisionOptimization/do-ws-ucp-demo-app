@@ -13,7 +13,9 @@ This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBM
 ![Screnshot](/images/ucp.png)
 
 You can run other configurations (i.e. other applications) using for example <http://localhost:6004?workspace=sd>
+You can see all existing configurations using <http://localhost:6004/workspaces>
 
+**For connections to WS, DO, WML, and PA to work, you need to set the right credentials in the corresponding config.json files**
 
 ## How it works
 

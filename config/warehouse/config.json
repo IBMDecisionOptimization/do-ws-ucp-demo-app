@@ -9,7 +9,7 @@
     
     "do" : {  
         "url":  "https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/",
-        "key": "api_7fe447c0-46eb-4f68-a7e5-196c95be0260",
+        "key": "api_xxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "model": "model.py"
     },
     "ui" : {

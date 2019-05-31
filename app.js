@@ -46,6 +46,8 @@ dodsxpa.routeConfig(router);
 
 dodsxpa.routeDSX(router);
 
+dodsxpa.routePA(router);
+
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);

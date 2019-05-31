@@ -5,22 +5,89 @@
         "config" : {
         }
     },
-    "dsx" : {
-        "type" : "local",
-        "apiurl": "https://bcp.datascienceelite.com",
-        "url": "https://bcp.datascienceelite.com",
-        "login": "alain.chabrier@ibm.com",
-        "password": "Hot6cold",
-        "projectName": "PA3"
-      },
+	"palocal": {	
+		"description": "PA Local on ibmdemos",
+		"loginurl": "http://ibmdemos/login",
+		"url": "http://ibmdemos/tm1/Decision%20Optimisation",
+		"username": "pm",
+        "password": "IBMDem0s"
+	},
     "do" : {  
         "url":  "https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/",
-        "key": "api_7fe447c0-46eb-4f68-a7e5-196c95be0260",
+        "key": "api_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "model": "model.py"
     },
     "ui" : {
         "title": "Supply Demand",
         "gridjs" : "grid.js"
-    }
+    },
+    "mapping" : {
+		"versionDimensionName": "Plan",
+		"input": {
+			"version": "Baseline",
+			"dimensions": {
+				"Products": {
+					"name": "Products"
+				},
+				"Plants": {
+					"name": "Plants"
+				},
+				"Markets": {
+					"name": "Markets"
+				},
+				"Months": {
+					"name": "Months"
+				}
+			},
+			"cubes": {
+				"Demand": {
+					"name": "Demand",
+					"readVersion" : false
+				},
+				"FirmSales": {
+					"name": "FirmSales",
+					"readVersion" : false
+				},
+				"MarginalProfit": {
+					"name": "MarginalProfit",
+					"readVersion" : false
+				},
+				"PlantMonthCapacity": {
+					"name": "PlantMonthCapacity",
+					"readVersion" : false
+				},
+				"PlantProductCapacity": {
+					"name": "PlantProductCapacity",
+					"readVersion" : false
+				},
+				"PlantProductCost": {
+					"name": "PlantProductCost",
+					"readVersion" : false
+				},
+				"InitialInventory": {
+					"name": "InitialInventory",
+					"readVersion" : false
+				}
+			}
+		},
+		"output": {
+			"version": "Baseline",
+			"cubes": {
+				"production": {
+					"name": "production"
+				},	
+				"executed_sales": {
+					"name": "executed_saled"
+				},	
+				"markets_inventory": {
+					"name": "markets_inventory"
+				},
+				"markets_allocation": {
+					"name": "markets_allocation"
+				}
+			},
+			"prefix": "_sd"
+		}
+	}
 
 }

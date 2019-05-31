@@ -6,6 +6,8 @@ scenariogrid.addKPIsWidget(0, 6, 12, 5);
 
 scenariogrid.addSolveWidget(0, 3);
 
+scenariogrid.addPAWidget(0, 5);
+
 scenariogrid.addTablesWidget('Inputs', 'input', undefined, 0, 8, 6, 4);
 
 scenariogrid.addTablesWidget('Outputs', 'output', undefined, 6, 8, 6, 4);
@@ -129,10 +131,8 @@ scenariogrid.addCustomWidget('sankey', sankeycfg);
 
 function treecb() {
 
-
         let scenario = scenariomgr.getSelectedScenario();
 
-     
         let flows = {};
 
         let productions = scenario.getTableRows('production');
@@ -166,7 +166,6 @@ function treecb() {
                 }
                 data.children.push(children)
         }        
-
             
         let div = document.getElementById('tree_div');
 

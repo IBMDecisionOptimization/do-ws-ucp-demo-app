@@ -2,6 +2,12 @@
 
 This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBMDecisionOptimization/do-ws-js) library.
 
+
+##### Table of Contents  
+* [Run the app locally](Run_the_app_locally)  
+* [How it works](How_it_works)
+* [How to start a new application](How_to_start_a_new_application)
+
 ## Run the app locally
 
 1. [Install Node.js](https://nodejs.org/en/download/)
@@ -96,7 +102,7 @@ dodsxpa.routeConfig(router);
 dodsxpa.routeDSX(router);
 ```
 
-### Confiuguration files
+### Configuration files
 
 For each application (that can be used with workspace=XXX), there is a configuration file under config/XXX/config.json
 It looks like (this one if the default one when no workspace is given):
@@ -143,3 +149,88 @@ The difference sections:
 * **dsx**: (optional) configuration of connection to some Watson Studio Local instance to import models and data.
 * **do**: configuration of how optimization is executed
 * **ui**: configuration of some additional UI properties, including the use of a separate JS file which will do some more precise setup of the grid layout.
+
+### Scenario persistence
+For each workspace and scenario, data is stored as a set of csv files under ./data/workspace_name/scenario_name
+There is also a scenario.json file specifying the categories of the different tables.
+For example:
+```
+{
+    "parameters": {
+        "category": "input"
+    },
+    "predicted-accidents": {
+        "category": "input"
+    },
+    "ambulances": {
+        "category": "output"
+    },
+    "kpis": {
+        "category": "output"
+    },
+    "links": {
+        "category": "output"
+    }
+}
+```
+
+## How to start a new application
+
+The repository comes with a few examples of applications organized into workspaces.
+For each workspace, there must be a config.json configuration file under ./config/workspace_name/config.json.
+
+
+### Start from a data set
+
+One way to start is to use a set of csv files.
+The csv files must have the column names as first row in file.
+Create a ./data/workspace_name/scenario 1 folder and put all your csv files in it.
+Create a scenario.json file with the structure shown above
+
+Then create a configuration for this workspace under ./config/workspace_name/config.json.
+The minimal content of this file should be like:
+```
+{
+    "name": "My Application Name",
+    "scenario" : {        
+        "config" : {
+
+        }
+    }
+    "ui" : {
+        "title": "My Application Title"
+    }
+}
+```
+
+You will be able to add configuration for DO, ML or PA later.
+
+### Start importing some scenario from Watson Studio
+
+An alternative to quickly start a new application is to import scenario, and/or dashboard and/or optimization model, from Watson Studio.
+For that create a minimal configuration file under ./config/workspace_name/config.json, with some dsx section:
+```
+{
+    "name": "Bridge",
+    "scenario" : {        
+        "config" : {
+
+        }
+    },
+    "dsx" : {
+      "type" : "local",
+      "apiurl": "https://xxxxxx
+      "url": "https://xxxxx
+      "login": "alain.chabrier@ibm.com",
+      "password": "xxxxxxxxxxxxx",
+      "projectName": "PA3"
+    },
+    "ui" : {
+        "title": "Bridge",
+        "gridjs" : "grid.js"
+    }
+}
+```
+
+Then run the node js application for this workspace using <http://localhost:6004?workspace=workspace_name>, and click on the import button on the top right. You should get the list of available projects in your Watson Studio instance.
+You can then import scenarios and save them, They will be stored in your local data folder.

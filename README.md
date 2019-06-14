@@ -6,7 +6,7 @@ This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBM
 ##### Table of Contents  
 * [Run the app locally](#Run_the_app_locally)  
 * [How it works](#How_it_works)
-* [The_code](#The_code)
+* [The_code](#The-code)
 * [How to start a new application](#How_to_start_a_new_application)
 
 ## Run the app locally

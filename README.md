@@ -151,6 +151,8 @@ The difference sections:
 * **do**: configuration of how optimization is executed
 * **ui**: configuration of some additional UI properties, including the use of a separate JS file which will do some more precise setup of the grid layout.
 
+More documentation on configuration files in [do-ws-js](https://github.com/IBMDecisionOptimization/do-ws-js).
+
 ### Scenario persistence
 For each workspace and scenario, data is stored as a set of csv files under ./data/workspace_name/scenario_name
 There is also a scenario.json file specifying the categories of the different tables.

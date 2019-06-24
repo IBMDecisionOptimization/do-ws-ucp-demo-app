@@ -1,0 +1,151 @@
+{
+    "name": "mos",
+    "description": "Maximo MOS",
+    "scenario": {
+        "config": {
+            "workOrders": {
+                "id": "id"
+            },
+            "_workOrders": {
+                "id": "id"
+            },
+            "$scenario": {},
+            "projects": {
+                "id": "usewith"
+            },
+            "requirements": {},
+            "relationshipConstraints": {},
+            "solverParameters": {
+                "id": "name",
+                "allowEdition": true
+            },
+            "zones": {},
+            "modelParameters": {
+                "id": "name",
+                "allowEdition": true
+            },
+            "calendars": {},
+            "capacities": {
+                "id": "craft"
+            },
+            "kpis": {
+                "id": "name"
+            },
+            "status": {
+                "id": "name"
+            },
+            "zoneRequests": {},
+            "alerts": {
+                "id": "index"
+            }
+        }
+    },
+    "ml": {
+        "url": "https://us-south.ml.cloud.ibm.com/v3/wml_instances/8a69e5fe-b112-4b92-adfd-0dbce326332b/deployments/6e29df09-dba1-4cb3-8de0-731aad46ad8d/online",
+        "apikey": "api_xxxxxxxxxxxxxxxxxxxxxxxx",
+        "preprocess": "preml.js",
+        "postprocess": "postml.js",
+        "input": "inputml",
+        "output": "predictions",
+        "nbOutputs": 1,
+        "action": {
+            "text": "PREDICT",
+            "alertErrors": true
+        }
+    },
+    "dsx": {
+        "type": "local",
+        "apiurl": "https://bcp.datascienceelite.com",
+        "url": "https://bcp.datascienceelite.com",
+        "login": "alain.chabrier@ibm.com",
+        "password": "api_xxxxxxxxxxxxxxxxxxxxxxxx",
+        "projectName": "PA3"
+    },
+    "do": {
+        "type": "mos",
+        "url": "http://mfaoptservice.rtp.raleigh.ibm.com:9080/mos/",
+        "key": "api_xxxxxxxxxxxxxxxxxxxxxxxx",
+        "modelName": "OpasScheduler",
+        "modelVersion": 1,
+        "projectId": "5c8fab4cceddaa3dac6aaf64",
+        "userName": "mosadmin"
+    },
+    "ui": {
+        "title": "MOS",
+        "gridjs": "grid.js",
+        "widgets": {
+            "import": {
+                "type": "action",
+                "id": "import",
+                "title": "Import",
+                "x": 0,
+                "y": 0,
+                "width": 2,
+                "height": 2
+            },
+            "gantt": {
+                "type": "custom",
+                "id": "gantt",
+                "title": "Gantt chart",
+                "x": 2,
+                "y": 0,
+                "width": 10,
+                "height": 7
+            },
+            "solve": {
+                "type": "solve",
+                "id": "solve",
+                "title": "Optimization",
+                "x": 0,
+                "y": 2,
+                "width": 2,
+                "height": 2
+            },
+            "scenario_1": {
+                "type": "scenario",
+                "id": "scenario_1",
+                "title": "Scenario Explorer",
+                "x": 0,
+                "y": 4,
+                "width": 2,
+                "height": 3
+            },
+            "Inputs2": {
+                "type": "tables",
+                "id": "Inputs2",
+                "title": "Inputs",
+                "x": 0,
+                "y": 7,
+                "width": 6,
+                "height": 6,
+                "category": "input"
+            },
+            "Outputs3": {
+                "type": "tables",
+                "id": "Outputs3",
+                "title": "Outputs",
+                "x": 6,
+                "y": 7,
+                "width": 6,
+                "height": 6,
+                "category": "output"
+            },
+            "sensitivity_run_6": {
+                "type": "sensitivity-run",
+                "id": "sensitivity_run_6",
+                "title": "Sensitivity Run",
+                "x": 0,
+                "y": 13,
+                "width": 12,
+                "height": 6,
+                "cfg": {
+                    "SENSITIVITY_RUN_N_PARAMS": "1",
+                    "SENSITIVITY_RUN_0_PARAM": "__table__",
+                    "SENSITIVITY_RUN_0_TABLE": "capacities",
+                    "SENSITIVITY_RUN_0_ROW": "1",
+                    "SENSITIVITY_RUN_0_COL": "patterndayseq"
+                }
+            }
+        }
+    }
+}

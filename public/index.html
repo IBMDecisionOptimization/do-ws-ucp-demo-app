@@ -44,21 +44,30 @@
           
         </style>
      
+     <link href="./dist/vs/editor/editor.main.css" rel="stylesheet" />
 </head>
 <body onload="load()"
         style=" height: 100%; ">
                 
 
+  
+        <script>var require = { paths: { 'vs': './dist/vs' } };</script>
+        <script type="text/javascript" src="./dist/vs/loader.js"></script>
+        <script type="text/javascript" src="./dist/vs/editor/editor.main.nls.js"></script>
+        <script type="text/javascript" src="./dist/vs/editor/editor.main.js"></script>
+        
     <div id="scenario_grid_div"></div>
 </body>
 
 <script type="text/javascript" src="./do-ws-js/scenario.js"></script>
+<script type="text/javascript" src="./do-ws-js/scenario-ma.js"></script>
 <script type="text/javascript" src="./do-ws-js/scenario-d3.js"></script>
 <script type="text/javascript" src="./do-ws-js/scenario-nvd3.js"></script>
 <script type="text/javascript" src="./do-ws-js/scenario-google.js"></script>
 <script type="text/javascript" src="./do-ws-js/scenario-gantt.js"></script>
 <script type="text/javascript" src="./do-ws-js/scenario-vega-lite.js"></script>
 <script type="text/javascript" src="./do-ws-js/scenario-grid.js"></script>
+<script type="text/javascript" src="./do-ws-js/configuration.js"></script>
 <script type="text/javascript" src="./main.js"></script>
 
 </html>

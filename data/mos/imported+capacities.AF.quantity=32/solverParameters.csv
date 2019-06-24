@@ -1,0 +1,7 @@
+name,value
+timeLimit,30
+extractConflicts,true
+UseWarmStart,false
+Workers,2
+solutionLimit,99999
+LogPeriod,1000

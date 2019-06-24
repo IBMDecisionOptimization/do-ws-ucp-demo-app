@@ -21,7 +21,7 @@ app.use('/', express.static(__dirname + '/public'));
 var bodyParser = require('body-parser')
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }))
 
 // parse application/json
 app.use(bodyParser.json({limit: '50mb'}))

@@ -1,0 +1,47 @@
+{
+  "parameters": {
+    "category": "input"
+  },
+  "projects": {
+    "category": "input"
+  },
+  "relationshipConstraints": {
+    "category": "input"
+  },
+  "solverParameters": {
+    "category": "input"
+  },
+  "requirements": {
+    "category": "input"
+  },
+  "zones": {
+    "category": "input"
+  },
+  "modelParameters": {
+    "category": "input"
+  },
+  "calendars": {
+    "category": "input"
+  },
+  "capacities": {
+    "category": "input"
+  },
+  "zoneRequests": {
+    "category": "input"
+  },
+  "kpis": {
+    "category": "output"
+  },
+  "status": {
+    "category": "output"
+  },
+  "alerts": {
+    "category": "output"
+  },
+  "_workOrders": {
+    "category": "output"
+  },
+  "workOrders": {
+    "category": "input"
+  }
+}

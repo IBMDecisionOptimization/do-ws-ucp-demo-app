@@ -21,34 +21,39 @@ function getConfig(workspace, cb) {
 }
 
 function testui() {
-        
-                
+      
+
+
 }
 var initDone = false;
 function initGrid() {
-
+        initDone = true;
         // testui();
         // return;
-        if ('ui' in config && 'gridjs' in config.ui) {
-                let url = './api/config/file?fileName='+config.ui.gridjs;
-                if (workspace != undefined)
-                        url += '&workspace='+workspace;
-                axios({
-                        method:'get',
-                        url:url,
-                        responseType:'text/plain'
-                      })
-                .then(function (response) {
-                        let grid = response.data;
-                        eval(grid);
-                        scenariogrid.redraw();
-                }); 
+        if ('ui' in config) {
+                if ( 'gridjs' in config.ui) {
+                        let url = './api/config/file?fileName='+config.ui.gridjs;
+                        if (workspace != undefined)
+                                url += '&workspace='+workspace;
+                        axios({
+                                method:'get',
+                                url:url,
+                                responseType:'text/plain'
+                        })
+                        .then(function (response) {
+                                let grid = response.data;
+                                eval(grid);
+                                scenariogrid.redraw();
+                        }); 
+                }
+                if ('widgets' in config.ui) {
+                        scenariogrid.init(config.ui.widgets)
+                }
         } else {
                 // default
                 scenariogrid.dodefaultdashboard();
                 scenariogrid.redraw();
         }
-        initDone = true;
 }
 function configCB(workspace) {
 
@@ -83,6 +88,11 @@ function onChangeScenario() {
         let scenario = scenariomgr.getSelectedScenario();
         
         showInputsAndOutputs(scenario);       
+
+        if ('mapping' in config)
+                if ('output' in config.mapping)
+                        if ('version' in config.mapping.output)
+                                config.mapping.output.version = scenario.getName();
 }
 
 

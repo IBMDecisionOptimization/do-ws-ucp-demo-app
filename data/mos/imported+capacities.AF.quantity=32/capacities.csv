@@ -1,0 +1,7 @@
+skilllevel,quantity,enddate,shift,craft,rank,startdate
+null,32,null,AIRBUS,AF,2147483647,null
+null,25,null,AIRBUS,AV,2147483647,null
+null,30,null,AIRBUS,CAB,2147483647,null
+null,15,null,AIRBUS,NDT,2147483647,null
+null,15,null,AIRBUS,PNT,2147483647,null
+null,25,null,AIRBUS,STR,2147483647,null

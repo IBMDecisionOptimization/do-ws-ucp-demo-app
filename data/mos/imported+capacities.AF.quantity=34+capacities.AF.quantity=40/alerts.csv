@@ -1,0 +1,3 @@
+index,severity,type,message
+1,ERROR,ParentZoneNotDeclared,Missing parent zone A380. Parent of 800
+2,WARNING,ZoneNoCapacity,Zone A380 has no capacity limit 

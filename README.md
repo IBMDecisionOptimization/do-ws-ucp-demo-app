@@ -4,9 +4,10 @@ This is a basic demonstrator of how to use the [do-ws-js](https://github.com/IBM
 
 
 ##### Table of Contents  
-* [Run the app locally](Run_the_app_locally)  
-* [How it works](How_it_works)
-* [How to start a new application](How_to_start_a_new_application)
+* [Run the app locally](#Run-the-app-locally)  
+* [How it works](#How-it-works)
+* [The code](#The-code)
+* [How to start a new application](#How-to-start-a-new-application)
 
 ## Run the app locally
 
@@ -149,6 +150,8 @@ The difference sections:
 * **dsx**: (optional) configuration of connection to some Watson Studio Local instance to import models and data.
 * **do**: configuration of how optimization is executed
 * **ui**: configuration of some additional UI properties, including the use of a separate JS file which will do some more precise setup of the grid layout.
+
+More documentation on configuration files in [do-ws-js](https://github.com/IBMDecisionOptimization/do-ws-js).
 
 ### Scenario persistence
 For each workspace and scenario, data is stored as a set of csv files under ./data/workspace_name/scenario_name

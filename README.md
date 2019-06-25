@@ -105,7 +105,9 @@ dodsxpa.routeDSX(router);
 
 ### Configuration files
 
-For each application (that can be used with workspace=XXX), there is a configuration file under config/XXX/config.json
+**Since 1.89 all workspaces specific files are under workspaces folder.**
+
+For each application (that can be used with workspace=XXX), there is a configuration file under workspaces/XXX/config.json
 It looks like (this one if the default one when no workspace is given):
 ```
 {
@@ -180,7 +182,7 @@ For example:
 ## How to start a new application
 
 The repository comes with a few examples of applications organized into workspaces.
-For each workspace, there must be a config.json configuration file under ./config/workspace_name/config.json.
+For each workspace, there must be a config.json configuration file under ./workspaces/workspace_name/config.json.
 
 
 ### Start from a data set
@@ -190,7 +192,7 @@ The csv files must have the column names as first row in file.
 Create a ./data/workspace_name/scenario 1 folder and put all your csv files in it.
 Create a scenario.json file with the structure shown above
 
-Then create a configuration for this workspace under ./config/workspace_name/config.json.
+Then create a configuration for this workspace under ./workspaces/workspace_name/config.json.
 The minimal content of this file should be like:
 ```
 {
@@ -211,7 +213,7 @@ You will be able to add configuration for DO, ML or PA later.
 ### Start importing some scenario from Watson Studio
 
 An alternative to quickly start a new application is to import scenario, and/or dashboard and/or optimization model, from Watson Studio.
-For that create a minimal configuration file under ./config/workspace_name/config.json, with some dsx section:
+For that create a minimal configuration file under ./workspaces/workspace_name/config.json, with some dsx section:
 ```
 {
     "name": "Bridge",

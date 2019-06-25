@@ -24,31 +24,32 @@
 		"loginurl": "http://ibmdemos/login",
 		"url": "http://ibmdemos/tm1/Decision%20Optimisation",
 		"username": "pm",
-        "password": "IBMDem0s"
-	},
-	"mapping" : {
-		"versionDimensionName": "Version",
-		"input": {
-			"version": "Baseline",
-			"dimensions": {
-			},
-			"cubes": {
-				"Diabetes": {
-					"name": "Diabetes",
-					"propertyDimensionName": "DiabeteProperties"
+		"password": "IBMDem0s",
+		"mapping" : {
+			"versionDimensionName": "Version",
+			"input": {
+				"version": "Baseline",
+				"dimensions": {
+				},
+				"cubes": {
+					"Diabetes": {
+						"name": "Diabetes",
+						"propertyDimensionName": "DiabeteProperties"
+					}
 				}
-			}
-		},
-		"output": {
-			"version": "Baseline",
-			"cubes": {
-				"DiabetesOutcome": {
-					"name": "DiabetesOutcome"
-				}			
 			},
-			"prefix": ""
+			"output": {
+				"version": "Baseline",
+				"cubes": {
+					"DiabetesOutcome": {
+						"name": "DiabetesOutcome"
+					}			
+				},
+				"prefix": ""
+			}
 		}
 	},
+	
 	"ui": {
 		"title": "Diabetes",
 		"gridjs": "grid.js"

@@ -5,12 +5,80 @@
         "config" : {
         }
     },
-	"palocal": {	
+	"pa": {	
 		"description": "PA Local on ibmdemos",
 		"loginurl": "http://ibmdemos/login",
 		"url": "http://ibmdemos/tm1/Decision%20Optimisation",
 		"username": "pm",
-        "password": "IBMDem0s"
+		"password": "IBMDem0s",
+		"mapping" : {
+			"versionDimensionName": "Plan",
+			"input": {
+				"version": "Baseline",
+				"dimensions": {
+					"Products": {
+						"name": "Products"
+					},
+					"Plants": {
+						"name": "Plants"
+					},
+					"Markets": {
+						"name": "Markets"
+					},
+					"Months": {
+						"name": "Months"
+					}
+				},
+				"cubes": {
+					"Demand": {
+						"name": "Demand",
+						"readVersion" : false
+					},
+					"FirmSales": {
+						"name": "FirmSales",
+						"readVersion" : false
+					},
+					"MarginalProfit": {
+						"name": "MarginalProfit",
+						"readVersion" : false
+					},
+					"PlantMonthCapacity": {
+						"name": "PlantMonthCapacity",
+						"readVersion" : false
+					},
+					"PlantProductCapacity": {
+						"name": "PlantProductCapacity",
+						"readVersion" : false
+					},
+					"PlantProductCost": {
+						"name": "PlantProductCost",
+						"readVersion" : false
+					},
+					"InitialInventory": {
+						"name": "InitialInventory",
+						"readVersion" : false
+					}
+				}
+			},
+			"output": {
+				"version": "Baseline",
+				"cubes": {
+					"production": {
+						"name": "production"
+					},	
+					"executed_sales": {
+						"name": "executed_saled"
+					},	
+					"markets_inventory": {
+						"name": "markets_inventory"
+					},
+					"markets_allocation": {
+						"name": "markets_allocation"
+					}
+				},
+				"prefix": "_sd"
+			}
+		}	
 	},
     "do" : {  
         "url":  "https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/",
@@ -20,74 +88,6 @@
     "ui" : {
         "title": "Supply Demand",
         "gridjs" : "grid.js"
-    },
-    "mapping" : {
-		"versionDimensionName": "Plan",
-		"input": {
-			"version": "Baseline",
-			"dimensions": {
-				"Products": {
-					"name": "Products"
-				},
-				"Plants": {
-					"name": "Plants"
-				},
-				"Markets": {
-					"name": "Markets"
-				},
-				"Months": {
-					"name": "Months"
-				}
-			},
-			"cubes": {
-				"Demand": {
-					"name": "Demand",
-					"readVersion" : false
-				},
-				"FirmSales": {
-					"name": "FirmSales",
-					"readVersion" : false
-				},
-				"MarginalProfit": {
-					"name": "MarginalProfit",
-					"readVersion" : false
-				},
-				"PlantMonthCapacity": {
-					"name": "PlantMonthCapacity",
-					"readVersion" : false
-				},
-				"PlantProductCapacity": {
-					"name": "PlantProductCapacity",
-					"readVersion" : false
-				},
-				"PlantProductCost": {
-					"name": "PlantProductCost",
-					"readVersion" : false
-				},
-				"InitialInventory": {
-					"name": "InitialInventory",
-					"readVersion" : false
-				}
-			}
-		},
-		"output": {
-			"version": "Baseline",
-			"cubes": {
-				"production": {
-					"name": "production"
-				},	
-				"executed_sales": {
-					"name": "executed_saled"
-				},	
-				"markets_inventory": {
-					"name": "markets_inventory"
-				},
-				"markets_allocation": {
-					"name": "markets_allocation"
-				}
-			},
-			"prefix": "_sd"
-		}
-	}
+    }
 
 }

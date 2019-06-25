@@ -89,10 +89,11 @@ function onChangeScenario() {
         
         showInputsAndOutputs(scenario);       
 
-        if ('mapping' in config)
-                if ('output' in config.mapping)
-                        if ('version' in config.mapping.output)
-                                config.mapping.output.version = scenario.getName();
+        if ('pa' in config)
+                if ('mapping' in config.pa)
+                        if ('output' in config.pa.mapping)
+                                if ('version' in config.pa.mapping.output)
+                                        config.pa.mapping.output.version = scenario.getName();
 }
 
 

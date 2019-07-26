@@ -14,7 +14,7 @@
             "kpis" : { "id":"kpi", "title":"KPIs"}
         }
     },
-    "dsx" : {
+    "ws" : {
         "type" : "local",
         "apiurl": "xxxxxxxxxxxxxxxxxxxxxxx",
         "url": "xxxxxxxxxxxxxxxxxxxxxxx",
@@ -22,7 +22,7 @@
         "password": "xxxxxxxxxxxxxxxxxxxxx",
         "projectName": "PA3"
       },
-    "dsxcloud": {
+    "wscloud": {
         "type": "cloud",
         "url": "https://eu-de.dataplatform.cloud.ibm.com",
         "apiurl": "https://api.eu-de.dataplatform.cloud.ibm.com",

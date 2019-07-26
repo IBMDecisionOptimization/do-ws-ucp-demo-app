@@ -94,13 +94,11 @@ The back end side code app.js file is also completely generic.
 
 It imports the modules and call the function so that the APIs are setup.
 ```
-var dods = require('do-ws-js/dods');
-dods.routeScenario(router);
-dods.routeSolve(router);
-
-var dodsxpa = require('do-ws-js/dodsxpa');
-dodsxpa.routeConfig(router);
-dodsxpa.routeDSX(router);
+var dowsjs = require('do-ws-js/dowsjs');
+dowsjs.routeScenario(router);
+dowsjs.routeSolve(router);
+dowsjs.routeConfig(router);
+dowsjs.routeWS(router);
 ```
 
 ### Configuration files
@@ -126,7 +124,7 @@ It looks like (this one if the default one when no workspace is given):
             "kpis" : { "id":"kpi", "title":"KPIs"}
         }
     },
-    "dsx" : {
+    "ws" : {
         "type" : "local",
         "apiurl": "https://xxxxxx
         "url": "https://xxxxx
@@ -149,7 +147,7 @@ It looks like (this one if the default one when no workspace is given):
 
 The difference sections:
 * **scenario**: some configuration on the different tables (input and output) used in the scenarios.
-* **dsx**: (optional) configuration of connection to some Watson Studio Local instance to import models and data.
+* **ws**: (optional) configuration of connection to some Watson Studio Local instance to import models and data.
 * **do**: configuration of how optimization is executed
 * **ui**: configuration of some additional UI properties, including the use of a separate JS file which will do some more precise setup of the grid layout.
 
@@ -213,7 +211,7 @@ You will be able to add configuration for DO, ML or PA later.
 ### Start importing some scenario from Watson Studio
 
 An alternative to quickly start a new application is to import scenario, and/or dashboard and/or optimization model, from Watson Studio.
-For that create a minimal configuration file under ./workspaces/workspace_name/config.json, with some dsx section:
+For that create a minimal configuration file under ./workspaces/workspace_name/config.json, with some ws section:
 ```
 {
     "name": "Bridge",
@@ -222,7 +220,7 @@ For that create a minimal configuration file under ./workspaces/workspace_name/c
 
         }
     },
-    "dsx" : {
+    "ws" : {
       "type" : "local",
       "apiurl": "https://xxxxxx
       "url": "https://xxxxx

@@ -22,13 +22,13 @@ function getConfig(workspace, cb) {
 
 function testui() {
       
-
+ 
 
 }
 var initDone = false;
 function initGrid() {
         initDone = true;
-        // testui();
+        //testui();
         // return;
         if ('ui' in config) {
                 if ( 'gridjs' in config.ui) {

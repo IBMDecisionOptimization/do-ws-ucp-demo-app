@@ -53,7 +53,7 @@
             "alertErrors": true
         }
     },
-    "dsx": {
+    "ws": {
         "type": "local",
         "apiurl": "https://bcp.datascienceelite.com",
         "url": "https://bcp.datascienceelite.com",

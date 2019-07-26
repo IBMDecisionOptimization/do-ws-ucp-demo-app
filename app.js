@@ -32,21 +32,19 @@ var router = express.Router();              // get an instance of the express Ro
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-var dods = require('do-ws-js/dods');
+var dowsjs = require('do-ws-js/dowsjs');
 
-dods.routeScenario(router);
+dowsjs.routeScenario(router);
 
-dods.routeSolve(router);
+dowsjs.routeSolve(router);
 
-dods.routeScore(router);
+dowsjs.routeScore(router);
 
-var dodsxpa = require('do-ws-js/dodsxpa');
+dowsjs.routeConfig(router);
 
-dodsxpa.routeConfig(router);
+dowsjs.routeWS(router);
 
-dodsxpa.routeDSX(router);
-
-dodsxpa.routePA(router);
+dowsjs.routePA(router);
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api

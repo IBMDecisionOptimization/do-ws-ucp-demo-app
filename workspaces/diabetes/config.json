@@ -44,8 +44,7 @@
 					"DiabetesOutcome": {
 						"name": "DiabetesOutcome"
 					}			
-				},
-				"prefix": ""
+				}
 			}
 		}
 	},

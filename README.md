@@ -1,3 +1,3 @@
 
 
-**This is deprecated and the rpeository to use is https://github.com/IBMDecisionOptimization/do-ws-pa**
+**This is deprecated and the repository to use is https://github.com/IBMDecisionOptimization/do-ws-pa**
